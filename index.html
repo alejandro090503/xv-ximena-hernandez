@@ -1,0 +1,2396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
+<title>Ximena · XV Años · 21 Septiembre 2026</title>
+<meta name="description" content="Celebro mis XV años y quiero que estés ahí. Una noche especial en Gómez Palacio, Durango — 21 de Septiembre 2026 · Abre tu invitación 💌">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://xv-ximena-hernandez.vercel.app/">
+<meta property="og:title"       content="💌 Ximena · XV Años · 21 · Septiembre · 2026">
+<meta property="og:description" content="Celebro mis XV años y quiero que estés ahí. Una celebración especial en Gómez Palacio, Durango — 21 de Septiembre 2026 · Abre tu invitación ✉️">
+<meta property="og:image"       content="https://xv-ximena-hernandez.vercel.app/og-image.jpg">
+<meta property="og:image:secure_url" content="https://xv-ximena-hernandez.vercel.app/og-image.jpg">
+<meta property="og:image:type"  content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"   content="Invitación de XV años de Ximena">
+<meta property="og:locale"      content="es_MX">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="💌 Ximena · XV Años · 21 · Septiembre · 2026">
+<meta name="twitter:description" content="Celebro mis XV años y quiero que estés ahí. Una celebración especial en Gómez Palacio, Durango — 21 de Septiembre 2026 ✉️">
+<meta name="twitter:image"       content="https://xv-ximena-hernandez.vercel.app/og-image.jpg">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── VARIABLES ── */
+:root{
+  --bg:#FBFDFF;
+  --accent:#4a8fb0;
+  --dark:#2f6b8a;
+  --text:#1E1508;
+  --surface:#E4F2FA;
+  --card:#FFFFFF;
+}
+
+/* ── RESET ── */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100vw}
+a,button,input,select,textarea{touch-action:manipulation}
+html{scroll-behavior:auto}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+/* ── LOADER ── */
+#loader{display:none;position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:18px;
+}
+#loader.active{display:flex}
+
+/* ── ENVELOPE OPENING SEQUENCE ── */
+#envelope-screen{
+  position:fixed;inset:0;z-index:9000;
+  background:#F2F8FC;
+  overflow:hidden;
+  cursor:pointer;
+}
+#envImage,#envVideo{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+}
+#envImage{opacity:0}
+#envVideo{opacity:0}
+.env-tap{
+  position:absolute;bottom:72px;left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:16px;letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--dark);
+  opacity:0;
+  padding:16px 36px;
+  white-space:nowrap;
+  border:1.8px solid rgba(47,107,138,.7);
+  border-radius:50px;
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  text-shadow:0 1px 8px rgba(255,255,255,.6);
+}
+.env-tap::before{
+  content:'';position:absolute;inset:0;
+  border-radius:50px;
+  border:1.5px solid rgba(47,107,138,.45);
+  animation:envpulse 2s ease-out infinite;
+}
+@keyframes envpulse{
+  0%{transform:scale(1);opacity:.75}
+  100%{transform:scale(1.28);opacity:0}
+}
+#env-flash{
+  position:fixed;inset:0;z-index:9999;
+  background:#fff;
+  opacity:0;
+  pointer-events:none;
+}
+.ld-mono{
+  font-family:'Great Vibes',cursive;
+  font-size:78px;line-height:1;
+  background:linear-gradient(135deg,#2f6b8a 0%,#4a8fb0 45%,#2f6b8a 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:flex;
+}
+.ld-mono span{display:inline-block}
+.ld-tag{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  letter-spacing:3px;
+  color:var(--accent);
+  opacity:0;
+}
+
+/* ── PETALS ── */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden;contain:strict}
+.particle{position:absolute;pointer-events:none;will-change:transform,opacity}
+.shimmer--xs{
+  width:3px;height:3px;border-radius:50%;
+  background:#d4af6e;
+  box-shadow:0 0 5px rgba(212,175,110,.95),0 0 10px rgba(196,152,64,.7);
+  opacity:0;
+}
+.shimmer--s{
+  width:4px;height:4px;border-radius:50%;
+  background:radial-gradient(circle,#e8c56a 0%,rgba(180,140,60,.85) 55%,transparent 100%);
+  box-shadow:0 0 7px rgba(232,197,106,.9),0 0 16px rgba(180,140,60,.6);
+  opacity:0;
+}
+.shimmer--m{
+  width:6px;height:6px;border-radius:50%;
+  background:radial-gradient(circle,#fff5cc 0%,#d4af6e 40%,rgba(180,140,60,.35) 75%,transparent 100%);
+  box-shadow:0 0 12px rgba(255,245,204,.95),0 0 26px rgba(212,175,110,.65);
+  opacity:0;
+}
+.sparkle{
+  opacity:0;
+  background:radial-gradient(circle,#fff8dc 0%,rgba(212,175,110,.95) 20%,transparent 70%);
+  clip-path:polygon(50% 0%,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0% 50%,38% 38%);
+  filter:drop-shadow(0 0 5px rgba(232,197,106,.9)) drop-shadow(0 0 12px rgba(196,152,64,.55));
+}
+
+/* ── WRAP ── */
+.wrap{
+  max-width:430px;
+  margin:0 auto;
+  overflow:hidden;
+  position:relative;
+  z-index:1;
+  visibility:hidden;
+  opacity:0;
+}
+
+/* ── REVEAL ── */
+.rv{opacity:0}
+
+/* ── SECTION BASE ── */
+.sec{padding:72px 28px;position:relative}
+.sec--bg{background:var(--bg)}
+.sec--surface{background:var(--surface)}
+
+.eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  text-align:center;
+  margin-bottom:10px;
+}
+.script-title{
+  font-family:'Great Vibes',cursive;
+  font-size:52px;
+  color:var(--dark);
+  text-align:center;
+  line-height:1.15;
+  margin-bottom:4px;
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint{
+  position:absolute;
+  bottom:14px;left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  opacity:1;
+  transition:opacity .7s ease;
+  white-space:nowrap;
+}
+.scroll-hint.hidden{opacity:0;pointer-events:none}
+.scroll-hint-txt{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  letter-spacing:9px;
+  padding-left:9px;
+  text-transform:uppercase;
+  color:var(--dark);
+  display:flex;align-items:center;gap:14px;
+}
+.scroll-hint-txt::before,
+.scroll-hint-txt::after{
+  content:'';
+  display:block;
+  width:28px;height:1px;
+  background:linear-gradient(to right,transparent,var(--accent));
+  opacity:.7;
+}
+.scroll-hint-txt::after{
+  background:linear-gradient(to left,transparent,var(--accent));
+}
+.scroll-hint-arrow{
+  display:flex;
+  animation:scrollbounce 1.8s ease-in-out infinite;
+}
+.scroll-hint-arrow svg{
+  width:28px;height:28px;
+  stroke:var(--accent);stroke-width:1.6;
+  fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+@keyframes scrollbounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(9px)}
+}
+
+/* ── ORNAMENT ── */
+.ornament{
+  display:flex;justify-content:center;
+  padding:20px 0;
+  background:var(--bg);
+}
+.ornament svg{width:260px;height:64px}
+.ornament--surface{background:var(--surface)}
+.ornament--s2b{background:linear-gradient(to bottom,var(--surface) 0%,var(--surface) 20%,var(--bg) 80%,var(--bg) 100%)}
+.ornament--b2s{background:linear-gradient(to bottom,var(--bg) 0%,var(--bg) 20%,var(--surface) 80%,var(--surface) 100%)}
+
+/* ── HERO ── */
+#hero{
+  position:relative;
+  height:100vh;
+  height:100dvh;
+  min-height:600px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom:64px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('portada.jpg') center/cover no-repeat;
+  background-color:var(--surface);
+}
+.hero-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(253,252,248,0) 15%,rgba(253,252,248,.45) 55%,var(--bg) 100%);
+}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px}
+.hero-bride{
+  font-family:'Great Vibes',cursive;
+  font-size:80px;
+  font-size:clamp(68px,21vw,90px);
+  color:var(--dark);
+  line-height:1;
+  display:block;
+}
+.hero-amp{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:40px;
+  color:var(--accent);
+  display:block;
+  margin:.08em 0;
+}
+.hero-groom{
+  font-family:'Great Vibes',cursive;
+  font-size:80px;
+  font-size:clamp(68px,21vw,90px);
+  color:var(--dark);
+  line-height:1;
+  display:block;
+}
+.hero-date{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:17px;
+  letter-spacing:8px;
+  color:var(--dark);
+  margin-top:18px;
+  display:block;
+  opacity:.85;
+}
+
+/* ── FECHA ── */
+#fecha{padding:48px 28px;background:var(--bg);text-align:center}
+.fecha-block{display:inline-flex;flex-direction:column;align-items:center;gap:10px}
+.fecha-vline{width:1px;height:24px;background:linear-gradient(to bottom,transparent,var(--accent),transparent)}
+.fecha-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--accent)}
+.fecha-row{display:flex;align-items:center;gap:14px}
+.fecha-rule{display:block;width:38px;height:1px;flex-shrink:0}
+.fecha-rule--l{background:linear-gradient(to right,transparent,var(--accent))}
+.fecha-rule--r{background:linear-gradient(to left,transparent,var(--accent))}
+.fecha-main{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--dark);white-space:nowrap}
+
+/* ── COUNTDOWN ── */
+#countdown{padding:64px 28px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,var(--surface) 14%,var(--surface) 100%)}
+.cd-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  max-width:360px;
+  margin:32px auto 0;
+}
+.cd-box{
+  background:var(--card);
+  border-radius:14px;
+  padding:20px 6px 16px;
+  box-shadow:0 4px 20px rgba(47,107,138,.08);
+}
+.cd-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;
+  color:var(--dark);
+  line-height:1;
+  font-weight:600;
+}
+.cd-lbl{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-top:6px;
+}
+
+/* ── QUOTE ── */
+#quote{padding:72px 36px;text-align:center;background:var(--bg)}
+.quote-txt{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  line-height:1.8;
+  color:var(--dark);
+  max-width:340px;
+  margin:0 auto;
+  font-weight:400;
+}
+.quote-sig{
+  font-family:'Great Vibes',cursive;
+  font-size:38px;
+  color:var(--accent);
+  margin-top:22px;
+  display:block;
+  letter-spacing:6px;
+}
+
+/* ── FAMILIA ── */
+#familia{padding:72px 28px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,var(--surface) 14%,var(--surface) 86%,var(--bg) 100%)}
+.fam-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:14px;
+  margin-top:28px;
+  max-width:380px;
+  margin-left:auto;margin-right:auto;
+}
+.fam-card{
+  background:var(--card);
+  border-radius:16px;
+  padding:22px 20px;
+  box-shadow:0 4px 16px rgba(47,107,138,.07);
+}
+.fam-role{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+.fam-names{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  line-height:1.9;
+  color:var(--dark);
+  font-weight:400;
+}
+
+/* ── UBICACIÓN ── */
+#ubicacion{padding:64px 28px;text-align:center;background:var(--bg)}
+.loc-card{
+  background:var(--card);
+  border-radius:20px;
+  padding:36px 28px;
+  margin-top:22px;
+  box-shadow:0 4px 24px rgba(47,107,138,.08);
+}
+.loc-name{
+  font-family:'Great Vibes',cursive;
+  font-size:44px;
+  color:var(--dark);
+}
+.loc-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-top:6px;
+}
+.loc-hours{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  color:var(--text);
+  margin-top:14px;
+  line-height:1.8;
+  font-weight:600;
+}
+.loc-city{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:13px;
+  letter-spacing:2px;
+  color:var(--accent);
+  margin-top:10px;
+  text-transform:uppercase;
+}
+.loc-map-embed{
+  width:100%;
+  height:200px;
+  border-radius:14px;
+  border:none;
+  margin-top:20px;
+  display:block;
+  filter:saturate(.85) brightness(.97);
+}
+.btn-map{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:14px;
+  background:transparent;
+  color:var(--dark);
+  text-decoration:none;
+  font-family:'Lato',sans-serif;
+  font-weight:500;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 22px;
+  border-radius:40px;
+  border:1.5px solid var(--dark);
+  transition:all .3s;
+}
+.btn-map:hover{background:var(--dark);color:#fff}
+.btn-map svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.loc-cal-divider{
+  width:40px;height:1px;
+  background:linear-gradient(to right,transparent,var(--accent),transparent);
+  margin:28px auto 20px;
+}
+.loc-cal-eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:12px;
+}
+.btn-cal{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  border:1.5px solid var(--accent);
+  color:var(--dark);
+  text-decoration:none;
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:12px 24px;
+  border-radius:40px;
+  transition:all .3s;
+  cursor:pointer;
+}
+.btn-cal:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-cal svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+
+/* ── ITINERARIO ── */
+#itinerario{padding:72px 16px;background:var(--bg);text-align:center}
+.itin-grid{
+  display:grid;
+  grid-template-columns:1fr 28px 1fr;
+  max-width:380px;
+  margin:40px auto 0;
+  position:relative;
+}
+.itin-spine{
+  position:absolute;
+  left:calc(50% - .5px);
+  top:8px;bottom:8px;
+  width:1px;
+  background:linear-gradient(to bottom,transparent,var(--accent) 8%,var(--accent) 92%,transparent);
+  transform-origin:top center;
+  transform:scaleY(0);
+}
+.itin-item{
+  padding:0 14px 32px;
+  text-align:right;
+}
+.itin-item--r{text-align:left}
+.itin-dot-col{
+  display:flex;flex-direction:column;align-items:center;
+  padding-bottom:32px;
+}
+.itin-dot{
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--accent);
+  border:2px solid var(--bg);
+  box-shadow:0 0 0 2px var(--accent);
+  flex-shrink:0;
+  margin-top:3px;
+}
+.itin-time{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  letter-spacing:2px;
+  color:var(--accent);
+  margin-bottom:4px;
+  font-weight:600;
+}
+.itin-evt{
+  font-family:'Lato',sans-serif;
+  font-weight:500;
+  font-size:15px;
+  color:var(--text);
+  line-height:1.4;
+}
+
+/* ── DRESS CODE ── */
+#dresscode{padding:72px 28px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,var(--surface) 14%,var(--surface) 86%,var(--bg) 100%)}
+.dc-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--dark);
+  margin-bottom:6px;
+  font-weight:600;
+}
+.dc-note{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:14px;
+  color:var(--accent);
+  letter-spacing:.5px;
+  margin-bottom:24px;
+}
+.dc-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:28px;
+}
+.dc-col{
+  background:var(--card);
+  border-radius:16px;
+  padding:22px 16px;
+  box-shadow:0 4px 16px rgba(47,107,138,.06);
+  text-align:left;
+}
+.dc-icon{display:flex;justify-content:center;margin-bottom:14px}
+.dc-icon svg{opacity:.72;filter:drop-shadow(0 1px 5px rgba(47,107,138,.18))}
+.dc-col-ttl{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--dark);
+  margin-bottom:12px;
+  text-align:center;
+  font-weight:600;
+}
+.dc-list{list-style:none}
+.dc-list li{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:13px;
+  color:var(--text);
+  padding:3px 0 3px 14px;
+  position:relative;
+  line-height:1.5;
+}
+.dc-list li::before{content:'·';position:absolute;left:4px;color:var(--accent)}
+.dc-avoid-section{margin-top:20px}
+.dc-avoid-label{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#c0625a;
+  margin-bottom:12px;
+  display:block;
+}
+.dc-avoid-swatches{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+  margin-bottom:6px;
+}
+.dc-sw{display:flex;flex-direction:column;align-items:center;gap:5px}
+.dc-sw-c{
+  width:34px;height:34px;border-radius:50%;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.dc-sw-n{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:10px;
+  letter-spacing:.5px;
+  color:var(--text);
+  text-align:center;
+  max-width:54px;
+  line-height:1.3;
+}
+
+/* ── GALERÍA RUEDA 3D ── */
+#galeria{padding:72px 28px 80px;background:var(--bg);text-align:center;overflow:visible}
+.wheel-scene{
+  position:relative;
+  width:100%;
+  height:520px;
+  margin:40px auto 0;
+  perspective:1400px;
+  transform-style:preserve-3d;
+  overflow:visible;
+}
+.wheel-ring{
+  position:absolute;
+  width:100%;height:100%;
+  transform-style:preserve-3d;
+  cursor:grab;
+}
+.wheel-ring.dragging{cursor:grabbing}
+.wheel-card{
+  position:absolute;
+  width:200px;height:280px;
+  left:50%;top:50%;
+  margin-left:-100px;margin-top:-140px;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid rgba(47,107,138,.25);
+  box-shadow:0 12px 40px rgba(47,107,138,.20);
+  user-select:none;
+  -webkit-user-select:none;
+}
+.wheel-card img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  pointer-events:none;
+}
+.wheel-card--video{position:relative;cursor:pointer}
+.vc-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(20,18,14,.52);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  border:1.5px solid rgba(255,255,255,.35);
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+  transition:opacity .25s,transform .25s;
+}
+.vc-play-btn svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+.wheel-card--video.playing .vc-play-btn{opacity:0;transform:translate(-50%,-50%) scale(.8)}
+.gal-hint{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--accent);
+  margin-top:24px;
+  opacity:.7;
+}
+
+/* ── RSVP ── */
+#rsvp{padding:72px 28px;background:linear-gradient(to bottom,var(--bg) 0%,var(--surface) 14%,var(--surface) 86%,var(--bg) 100%);text-align:center}
+.rsvp-note{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:16px;
+  letter-spacing:1px;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.rsvp-deadline{
+  font-family:'Lato',sans-serif;
+  font-weight:500;
+  font-size:14px;
+  color:var(--dark);
+  margin-bottom:28px;
+  letter-spacing:.5px;
+}
+.rsvp-card{
+  background:var(--card);
+  border-radius:20px;
+  padding:32px 24px;
+  box-shadow:0 4px 24px rgba(47,107,138,.09);
+  text-align:left;
+}
+.rsvp-pases-badge{
+  display:inline-block;
+  background:var(--surface);
+  border:1.5px solid var(--accent);
+  border-radius:50px;
+  padding:7px 20px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--dark);
+  letter-spacing:2px;
+  margin-bottom:24px;
+}
+.rsvp-field{margin-bottom:18px}
+.rsvp-field label{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+  font-weight:600;
+}
+.rsvp-field input{
+  width:100%;
+  background:var(--bg);
+  border:1.5px solid rgba(138,139,101,.35);
+  border-radius:10px;
+  padding:13px 14px;
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:16px;
+  color:var(--text);
+  outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.rsvp-field input:focus{border-color:var(--accent)}
+.btn-wa{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;margin-top:6px;
+  background:var(--dark);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-family:'Lato',sans-serif;
+  font-weight:500;
+  font-size:14px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  padding:16px 24px;
+  border-radius:50px;
+  transition:background .3s,box-shadow .3s;
+  box-shadow:0 4px 18px rgba(47,107,138,.28);
+}
+.btn-wa:hover{background:var(--accent);box-shadow:0 6px 24px rgba(138,139,101,.38)}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85}
+.rsvp-attend-row{display:flex;gap:12px;margin-top:6px;margin-bottom:18px}
+.rsvp-attend-btn{
+  flex:1;padding:13px 10px;
+  border:1.5px solid var(--dark);border-radius:50px;
+  background:transparent;color:var(--dark);
+  font-family:'Lato',sans-serif;font-weight:500;font-size:13px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  cursor:pointer;transition:background .25s,color .25s,box-shadow .25s;
+}
+.rsvp-attend-btn.active,.rsvp-attend-btn:hover{
+  background:var(--dark);color:#fff;
+  box-shadow:0 4px 14px rgba(47,107,138,.30);
+}
+.rsvp-attend-btn--no.active,.rsvp-attend-btn--no:hover{
+  background:#a05050;border-color:#a05050;
+  box-shadow:0 4px 14px rgba(160,80,80,.25);
+}
+
+/* ── SIN NIÑOS ── */
+.no-kids{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(138,139,101,.07);
+  border:1px solid rgba(138,139,101,.28);
+  border-radius:14px;
+  padding:14px 18px;
+  margin-top:24px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--dark);
+  text-align:left;
+  line-height:1.5;
+}
+.no-kids svg{
+  width:22px;height:22px;flex-shrink:0;
+  stroke:var(--accent);stroke-width:1.5;
+  fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ── REGALOS ── */
+#regalos{padding:72px 28px;background:var(--bg);text-align:center}
+.gift-card{
+  background:var(--card);
+  border-radius:20px;
+  padding:32px 28px;
+  margin-top:28px;
+  box-shadow:0 4px 24px rgba(47,107,138,.08);
+}
+.gift-msg{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:17px;
+  line-height:1.85;
+  color:var(--text);
+  margin-bottom:24px;
+}
+.gift-divider{
+  width:40px;height:1px;
+  background:linear-gradient(to right,transparent,var(--accent),transparent);
+  margin:0 auto 22px;
+}
+.gift-stores{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.btn-store{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:15px 24px;border-radius:50px;
+  text-decoration:none;
+  font-family:'Lato',sans-serif;font-weight:500;
+  font-size:14px;letter-spacing:2px;text-transform:uppercase;
+  transition:opacity .25s;
+}
+.btn-store:hover{opacity:.85}
+.btn-liverpool{background:var(--dark);color:#fff}
+.btn-liverpool:hover{background:var(--accent)}
+.btn-store svg{width:20px;height:20px;fill:currentColor;flex-shrink:0}
+
+/* ── FOOTER ── */
+#footer{padding:64px 28px;text-align:center;background:var(--bg)}
+.footer-names{
+  font-family:'Great Vibes',cursive;
+  font-size:50px;
+  color:var(--dark);
+}
+.footer-date{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:16px;
+  letter-spacing:6px;
+  color:var(--accent);
+  margin-top:10px;
+}
+.footer-hr{
+  width:60px;height:1px;
+  background:var(--accent);
+  margin:24px auto 16px;
+  opacity:.4;
+}
+.footer-credit{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--accent);
+  opacity:.45;
+  text-decoration:none;
+  display:block;
+  transition:opacity .3s;
+}
+.footer-credit:hover{opacity:.75}
+
+/* ── MUSIC FAB ── */
+.vinyl-btn{
+  position:fixed;bottom:20px;right:20px;z-index:50;
+  width:72px;height:72px;border-radius:50%;padding:0;
+  border:none;cursor:pointer;background:transparent;
+  opacity:0;transform:scale(.6);pointer-events:none;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 4px 18px rgba(0,0,0,.45),0 0 0 1px rgba(47,107,138,.12);
+}
+.vinyl-btn.is-ready{opacity:1;transform:scale(1);pointer-events:auto}
+.vinyl-btn:hover{transform:scale(1.1)}
+.vinyl-spin{
+  width:100%;height:100%;border-radius:50%;position:relative;
+  transition:none;
+}
+.vinyl-btn.is-playing .vinyl-spin{animation:vinylSpin 1.8s linear infinite}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+.vinyl-disc{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;
+  background:
+    radial-gradient(circle,#0A0F26 4%,transparent 4.5%),
+    radial-gradient(circle,#4a8fb0 0%,#2f6b8a 17%,#4a4b2b 19%,transparent 19.5%),
+    repeating-radial-gradient(circle,
+      transparent 20%,rgba(255,255,255,.055) 20.8%,transparent 21.5%,
+      transparent 24%,rgba(255,255,255,.04) 24.8%,transparent 25.5%,
+      transparent 28%,rgba(255,255,255,.055) 28.8%,transparent 29.5%,
+      transparent 32%,rgba(255,255,255,.04) 32.8%,transparent 33.5%,
+      transparent 36%,rgba(255,255,255,.055) 36.8%,transparent 37.5%,
+      transparent 40%,rgba(255,255,255,.04) 40.8%,transparent 41.5%,
+      transparent 44%,rgba(255,255,255,.055) 44.8%,transparent 45.5%,
+      transparent 48%,rgba(255,255,255,.04) 48.8%,transparent 49.5%,
+      transparent 52%,rgba(255,255,255,.055) 52.8%,transparent 53.5%,
+      transparent 56%,rgba(255,255,255,.04) 56.8%,transparent 57.5%,
+      transparent 60%,rgba(255,255,255,.055) 60.8%,transparent 61.5%,
+      transparent 64%,rgba(255,255,255,.04) 64.8%,transparent 65.5%,
+      transparent 68%,rgba(255,255,255,.055) 68.8%,transparent 69.5%,
+      transparent 72%,rgba(255,255,255,.04) 72.8%,transparent 73.5%,
+      transparent 76%,rgba(255,255,255,.055) 76.8%,transparent 77.5%,
+      transparent 80%,rgba(255,255,255,.04) 80.8%,transparent 81.5%,
+      transparent 84%,rgba(255,255,255,.055) 84.8%,transparent 85.5%,
+      transparent 88%,rgba(255,255,255,.04) 88.8%,transparent 89.5%,
+      transparent 92%,rgba(255,255,255,.055) 92.8%,transparent 93.5%,
+      transparent 96%,rgba(255,255,255,.04) 96.8%,transparent 97.5%
+    ),
+    radial-gradient(circle,#0A0F26 0%,#111828 60%,#0A0F26 100%);
+  box-shadow:inset 0 0 8px rgba(0,0,0,.4);
+}
+.vinyl-sheen{
+  position:absolute;inset:0;border-radius:50%;
+  background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.09) 42%,rgba(255,255,255,.15) 48%,rgba(255,255,255,.09) 54%,transparent 66%);
+  pointer-events:none;
+}
+.vinyl-label-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--script);font-size:11px;color:#E4F2FA;
+  text-align:center;line-height:1.1;opacity:.8;
+  pointer-events:none;width:26px;
+}
+.vinyl-label-text small{font-family:var(--sans);font-size:5px;letter-spacing:.15em;display:block;margin-top:1px;opacity:.6}
+.vinyl-hole{
+  position:absolute;top:50%;left:50%;width:6px;height:6px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:#0A0F26;
+  box-shadow:0 0 0 1.5px rgba(138,139,101,.5);
+}
+.vinyl-icons{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:18px;height:18px;pointer-events:none;z-index:2;
+}
+.vinyl-icons svg{width:100%;height:100%;display:block}
+.vinyl-icon-pause{display:none}
+.vinyl-btn.is-playing .vinyl-icon-play{display:none}
+.vinyl-btn.is-playing .vinyl-icon-pause{display:block}
+.vinyl-btn::after{
+  content:"";position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid var(--accent);opacity:.3;
+  animation:vinylPulse 3s ease-in-out infinite;
+}
+.vinyl-btn.is-playing::after{animation-duration:1.6s}
+@keyframes vinylPulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.12);opacity:.05}}
+.vinyl-tonearm{
+  position:absolute;top:-4px;right:-2px;width:24px;height:34px;
+  transform-origin:top right;transform:rotate(-28deg);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:1;
+}
+.vinyl-btn.is-playing .vinyl-tonearm{transform:rotate(-12deg)}
+.vinyl-tonearm-line{
+  position:absolute;top:2px;right:4px;width:2px;height:28px;
+  background:linear-gradient(to bottom,#4a4b2b,#4a8fb0 40%,#4a4b2b);
+  border-radius:1px;transform:rotate(-5deg);transform-origin:top center;
+}
+.vinyl-tonearm-head{
+  position:absolute;bottom:0;right:2px;width:5px;height:6px;
+  background:#4a8fb0;border-radius:0 0 2px 2px;
+}
+.vinyl-tonearm-pivot{
+  position:absolute;top:0;right:2px;width:7px;height:7px;
+  background:radial-gradient(circle,#a0a17a,#2f6b8a);border-radius:50%;
+  box-shadow:0 1px 3px rgba(0,0,0,.3);
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ LOADER -->
+<div id="loader">
+  <div class="ld-mono" id="ldMono">
+    <span>X</span><span>&nbsp;</span><span>V</span>
+  </div>
+  <p class="ld-tag" id="ldTag">Mis XV Años &middot; 21 Septiembre 2026</p>
+</div>
+
+<!-- ═══════════════════════════════════════════ PÉTALOS -->
+<div id="particles"></div>
+
+<!-- ═══════════════════════════════════════════ ENVELOPE OPENING -->
+<div id="envelope-screen">
+  <img id="envImage" src="sobre.png" alt="Invitación de XV años">
+  <video id="envVideo" src="apertura.mp4" muted playsinline preload="auto" poster="sobre.png"></video>
+  <div class="env-tap" id="envTap">Toca para abrir</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ WRAP -->
+<div class="wrap">
+
+  <!-- ── 1. HERO ── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-content">
+      <span class="hero-bride rv">Ximena</span>
+      <span class="hero-amp rv">&middot;</span>
+      <span class="hero-groom rv">XV Años</span>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <span class="scroll-hint-txt">Desliza</span>
+      <span class="scroll-hint-arrow">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </div>
+  </section>
+
+  <!-- ── ORNAMENTO A ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- lozenge center -->
+      <path d="M180 23 L188 35 L180 47 L172 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".9" opacity=".52"/>
+      <path d="M180 27 L185 35 L180 43 L175 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".4" opacity=".24"/>
+      <circle cx="180" cy="35" r="1.9" fill="#2f6b8a" opacity=".50"/>
+      <!-- stem + jewel -->
+      <line x1="180" y1="47" x2="180" y2="57" stroke="#2f6b8a" stroke-width=".75" opacity=".38" stroke-linecap="round"/>
+      <circle cx="180" cy="59.5" r="2.4" fill="#2f6b8a" opacity=".44"/>
+      <circle cx="180" cy="59.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".6" opacity=".22"/>
+      <circle cx="180" cy="59.5" r="7.2" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".12"/>
+      <!-- left main branch -->
+      <path d="M172 35 C156 32 136 24 112 16 C90 9 69 6 47 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- left secondary branch -->
+      <path d="M172 35 C161 31 146 25 128 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- right main branch -->
+      <path d="M188 35 C204 32 224 24 248 16 C270 9 291 6 313 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- right secondary branch -->
+      <path d="M188 35 C199 31 214 25 232 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- left main leaves -->
+      <path d="M160 29 C157 24 159 20 162 22 C163 26 161 29 160 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M150 26 C147 30 145 34 149 33 C152 32 152 28 150 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M138 21 C135 16 137 12 140 14 C141 18 139 21 138 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M127 17 C124 21 122 25 126 24 C129 23 129 19 127 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M113 12 C110 7 112 3 115 5 C116 9 114 12 113 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M100 9 C97 13 95 17 99 16 C102 15 102 11 100 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M85 7 C83 3 85 0 88 1 C88 4 86 7 85 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M71 6 C69 9 67 13 71 12 C74 11 74 7 71 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- left secondary leaves -->
+      <path d="M152 27 C150 23 152 20 154 21 C155 24 153 27 152 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M139 21 C137 25 136 28 139 27 C142 26 142 22 139 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- right main leaves -->
+      <path d="M200 29 C203 24 201 20 198 22 C197 26 199 29 200 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M210 26 C213 30 215 34 211 33 C208 32 208 28 210 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M222 21 C225 16 223 12 220 14 C219 18 221 21 222 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M233 17 C236 21 238 25 234 24 C231 23 231 19 233 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M247 12 C250 7 248 3 245 5 C244 9 246 12 247 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M260 9 C263 13 265 17 261 16 C258 15 258 11 260 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M275 7 C277 3 275 0 272 1 C272 4 274 7 275 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M289 6 C291 9 293 13 289 12 C286 11 286 7 289 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- right secondary leaves -->
+      <path d="M208 27 C210 23 208 20 206 21 C205 24 207 27 208 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M221 21 C223 25 224 28 221 27 C218 26 218 22 221 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- left tip -->
+      <circle cx="47" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="47" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="35" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="25" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- right tip -->
+      <circle cx="313" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="313" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="325" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="335" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- secondary tips -->
+      <circle cx="128" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="128" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+      <circle cx="232" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="232" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 3. FECHA ── -->
+  <section id="fecha">
+    <div class="fecha-block rv">
+      <div class="fecha-vline"></div>
+      <p class="fecha-label">Lunes</p>
+      <div class="fecha-row">
+        <span class="fecha-rule fecha-rule--l"></span>
+        <span class="fecha-main">21 &middot; Septiembre &middot; 2026</span>
+        <span class="fecha-rule fecha-rule--r"></span>
+      </div>
+      <div class="fecha-vline"></div>
+      <p id="invPersonalizada" class="rv" style="display:none;margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--accent);text-align:center;letter-spacing:.3px;line-height:1.6"></p>
+    </div>
+  </section>
+
+  <!-- ── 4. CUENTA REGRESIVA ── -->
+  <section id="countdown" class="sec sec--surface">
+    <p class="eyebrow rv">Faltan</p>
+    <h2 class="script-title rv">Cuenta Regresiva</h2>
+    <div class="cd-grid">
+      <div class="cd-box rv"><div class="cd-num" id="cdDias">000</div><div class="cd-lbl">Días</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdHoras">00</div><div class="cd-lbl">Horas</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdMins">00</div><div class="cd-lbl">Minutos</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdSecs">00</div><div class="cd-lbl">Segundos</div></div>
+    </div>
+  </section>
+
+  <!-- ── ORNAMENTO B ── -->
+  <div class="ornament ornament--s2b rv">
+    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- fine rules -->
+      <line x1="10" y1="15.5" x2="113" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="147" y1="15.5" x2="250" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="10" y1="17.5" x2="113" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <line x1="147" y1="17.5" x2="250" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <!-- 4-petal blossom -->
+      <path d="M130 7 C127 9 127 13 130 14 C133 13 133 9 130 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M130 18 C127 19.5 127 23.5 130 25 C133 23.5 133 19.5 130 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M122 16 C122 13.5 118.5 12.5 117 14.5 C118.5 17 122 17 122 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M138 16 C138 13.5 141.5 12.5 143 14.5 C141.5 17 138 17 138 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <circle cx="130" cy="16" r="2.1" fill="#2f6b8a" opacity=".48"/>
+      <circle cx="130" cy="16" r="5.8" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".22"/>
+      <!-- diamond accents -->
+      <path d="M97 15.5 L100 18 L97 20.5 L94 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M163 15.5 L166 18 L163 20.5 L160 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M72 15.5 L75 18 L72 20.5 L69 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <path d="M188 15.5 L191 18 L188 20.5 L185 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <!-- leaf pairs (stroke only) -->
+      <path d="M84 14 C82 11 84 9 86 10 C86 13 85 14 84 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M84 18 C82 21 84 23 86 22 C86 19 85 18 84 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M57 14 C55 11 57 9 59 10 C59 13 58 14 57 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M57 18 C55 21 57 23 59 22 C59 19 58 18 57 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M176 14 C178 11 176 9 174 10 C174 13 175 14 176 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M176 18 C178 21 176 23 174 22 C174 19 175 18 176 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M203 14 C205 11 203 9 201 10 C201 13 202 14 203 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M203 18 C205 21 203 23 201 22 C201 19 202 18 203 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <!-- end ornaments -->
+      <circle cx="10" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="10" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+      <circle cx="250" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="250" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 6. FRASE ── -->
+  <section id="quote" class="sec sec--bg">
+    <p class="quote-txt rv">
+      &ldquo;Hoy doy gracias a Dios por estos quince años de vida, por mi familia y por cada persona que ha caminado a mi lado. Con el corazón lleno de ilusión, pongo en sus manos esta nueva etapa.&rdquo;
+    </p>
+    <span class="quote-sig rv">Ximena</span>
+  </section>
+
+  <!-- ── ORNAMENTO A ── -->
+  <div class="ornament ornament--b2s rv">
+    <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- lozenge center -->
+      <path d="M180 23 L188 35 L180 47 L172 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".9" opacity=".52"/>
+      <path d="M180 27 L185 35 L180 43 L175 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".4" opacity=".24"/>
+      <circle cx="180" cy="35" r="1.9" fill="#2f6b8a" opacity=".50"/>
+      <!-- stem + jewel -->
+      <line x1="180" y1="47" x2="180" y2="57" stroke="#2f6b8a" stroke-width=".75" opacity=".38" stroke-linecap="round"/>
+      <circle cx="180" cy="59.5" r="2.4" fill="#2f6b8a" opacity=".44"/>
+      <circle cx="180" cy="59.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".6" opacity=".22"/>
+      <circle cx="180" cy="59.5" r="7.2" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".12"/>
+      <!-- left main branch -->
+      <path d="M172 35 C156 32 136 24 112 16 C90 9 69 6 47 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- left secondary branch -->
+      <path d="M172 35 C161 31 146 25 128 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- right main branch -->
+      <path d="M188 35 C204 32 224 24 248 16 C270 9 291 6 313 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- right secondary branch -->
+      <path d="M188 35 C199 31 214 25 232 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- left main leaves -->
+      <path d="M160 29 C157 24 159 20 162 22 C163 26 161 29 160 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M150 26 C147 30 145 34 149 33 C152 32 152 28 150 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M138 21 C135 16 137 12 140 14 C141 18 139 21 138 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M127 17 C124 21 122 25 126 24 C129 23 129 19 127 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M113 12 C110 7 112 3 115 5 C116 9 114 12 113 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M100 9 C97 13 95 17 99 16 C102 15 102 11 100 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M85 7 C83 3 85 0 88 1 C88 4 86 7 85 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M71 6 C69 9 67 13 71 12 C74 11 74 7 71 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- left secondary leaves -->
+      <path d="M152 27 C150 23 152 20 154 21 C155 24 153 27 152 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M139 21 C137 25 136 28 139 27 C142 26 142 22 139 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- right main leaves -->
+      <path d="M200 29 C203 24 201 20 198 22 C197 26 199 29 200 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M210 26 C213 30 215 34 211 33 C208 32 208 28 210 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M222 21 C225 16 223 12 220 14 C219 18 221 21 222 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M233 17 C236 21 238 25 234 24 C231 23 231 19 233 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M247 12 C250 7 248 3 245 5 C244 9 246 12 247 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M260 9 C263 13 265 17 261 16 C258 15 258 11 260 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M275 7 C277 3 275 0 272 1 C272 4 274 7 275 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M289 6 C291 9 293 13 289 12 C286 11 286 7 289 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- right secondary leaves -->
+      <path d="M208 27 C210 23 208 20 206 21 C205 24 207 27 208 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M221 21 C223 25 224 28 221 27 C218 26 218 22 221 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- left tip -->
+      <circle cx="47" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="47" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="35" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="25" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- right tip -->
+      <circle cx="313" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="313" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="325" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="335" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- secondary tips -->
+      <circle cx="128" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="128" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+      <circle cx="232" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="232" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── FAMILIA ── -->
+  <section id="familia" class="sec">
+    <p class="eyebrow rv">Con la bendición de</p>
+    <h2 class="script-title rv">Mi Familia</h2>
+    <div class="fam-grid">
+      <div class="fam-card rv">
+        <div class="fam-role">Padres de la Quinceañera</div>
+        <div class="fam-names">Iván Hernández<br>Lizeth Reyes</div>
+      </div>
+      <div class="fam-card rv">
+        <div class="fam-role">Padrinos</div>
+        <div class="fam-names">Diana Reyes<br>Juan Ernesto Reyes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ORNAMENTO B ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- fine rules -->
+      <line x1="10" y1="15.5" x2="113" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="147" y1="15.5" x2="250" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="10" y1="17.5" x2="113" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <line x1="147" y1="17.5" x2="250" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <!-- 4-petal blossom -->
+      <path d="M130 7 C127 9 127 13 130 14 C133 13 133 9 130 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M130 18 C127 19.5 127 23.5 130 25 C133 23.5 133 19.5 130 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M122 16 C122 13.5 118.5 12.5 117 14.5 C118.5 17 122 17 122 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M138 16 C138 13.5 141.5 12.5 143 14.5 C141.5 17 138 17 138 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <circle cx="130" cy="16" r="2.1" fill="#2f6b8a" opacity=".48"/>
+      <circle cx="130" cy="16" r="5.8" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".22"/>
+      <!-- diamond accents -->
+      <path d="M97 15.5 L100 18 L97 20.5 L94 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M163 15.5 L166 18 L163 20.5 L160 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M72 15.5 L75 18 L72 20.5 L69 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <path d="M188 15.5 L191 18 L188 20.5 L185 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <!-- leaf pairs (stroke only) -->
+      <path d="M84 14 C82 11 84 9 86 10 C86 13 85 14 84 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M84 18 C82 21 84 23 86 22 C86 19 85 18 84 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M57 14 C55 11 57 9 59 10 C59 13 58 14 57 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M57 18 C55 21 57 23 59 22 C59 19 58 18 57 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M176 14 C178 11 176 9 174 10 C174 13 175 14 176 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M176 18 C178 21 176 23 174 22 C174 19 175 18 176 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M203 14 C205 11 203 9 201 10 C201 13 202 14 203 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M203 18 C205 21 203 23 201 22 C201 19 202 18 203 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <!-- end ornaments -->
+      <circle cx="10" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="10" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+      <circle cx="250" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="250" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 8. UBICACIÓN ── -->
+  <section id="ubicacion" class="sec sec--bg">
+    <p class="eyebrow rv">Dónde Celebramos</p>
+    <h2 class="script-title rv">Ubicación</h2>
+
+    <!-- Ceremonia religiosa -->
+    <div class="loc-card rv">
+      <div class="loc-name">Misa de XV Años</div>
+      <div class="loc-sub">Parroquia de San Antonio de Padua</div>
+      <div class="loc-hours">6:00 pm</div>
+      <div class="loc-city">C. San Simón 212, San Antonio · Gómez Palacio, Durango</div>
+      <iframe
+        class="loc-map-embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Parroquia+de+San+Antonio+De+Padua,+C.+San+Simon+212,+San+Antonio,+35015+Gomez+Palacio,+Dgo.&output=embed&z=16">
+      </iframe>
+      <a href="https://maps.app.goo.gl/wawZfS5zzJVSnAWs8"
+         target="_blank" rel="noopener" class="btn-map">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+
+    <!-- Recepción -->
+    <div class="loc-card rv" style="margin-top:18px">
+      <div class="loc-name">Recepción</div>
+      <div class="loc-sub">Quinta El Edén</div>
+      <div class="loc-hours">7:00 pm</div>
+      <div class="loc-city">Ej. Transporte, DGO 162 · La Torreña, Durango</div>
+      <iframe
+        class="loc-map-embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Quinta+el+Eden+Ej.+Transporte,+DGO+162+4300,+35136+La+Torrena,+Dgo.&output=embed&z=16">
+      </iframe>
+      <a href="https://maps.app.goo.gl/U6ChHawXoDjphaPm8"
+         target="_blank" rel="noopener" class="btn-map">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+
+    <!-- Calendario -->
+    <div class="loc-cal-divider rv"></div>
+    <p class="loc-cal-eyebrow rv">Agenda el día especial</p>
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+A%C3%B1os+de+Ximena&dates=20260922T000000Z/20260922T090000Z&details=Misa+18%3A00+hrs+%7C+Recepci%C3%B3n+19%3A00+hrs+Quinta+El+Ed%C3%A9n&location=G%C3%B3mez+Palacio%2C+Durango%2C+M%C3%A9xico"
+       target="_blank" rel="noopener" class="btn-cal rv">
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
+      Guardar en Mi Calendario
+    </a>
+  </section>
+
+  <!-- ── ORNAMENTO B ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- fine rules -->
+      <line x1="10" y1="15.5" x2="113" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="147" y1="15.5" x2="250" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="10" y1="17.5" x2="113" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <line x1="147" y1="17.5" x2="250" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <!-- 4-petal blossom -->
+      <path d="M130 7 C127 9 127 13 130 14 C133 13 133 9 130 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M130 18 C127 19.5 127 23.5 130 25 C133 23.5 133 19.5 130 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M122 16 C122 13.5 118.5 12.5 117 14.5 C118.5 17 122 17 122 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M138 16 C138 13.5 141.5 12.5 143 14.5 C141.5 17 138 17 138 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <circle cx="130" cy="16" r="2.1" fill="#2f6b8a" opacity=".48"/>
+      <circle cx="130" cy="16" r="5.8" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".22"/>
+      <!-- diamond accents -->
+      <path d="M97 15.5 L100 18 L97 20.5 L94 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M163 15.5 L166 18 L163 20.5 L160 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M72 15.5 L75 18 L72 20.5 L69 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <path d="M188 15.5 L191 18 L188 20.5 L185 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <!-- leaf pairs (stroke only) -->
+      <path d="M84 14 C82 11 84 9 86 10 C86 13 85 14 84 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M84 18 C82 21 84 23 86 22 C86 19 85 18 84 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M57 14 C55 11 57 9 59 10 C59 13 58 14 57 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M57 18 C55 21 57 23 59 22 C59 19 58 18 57 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M176 14 C178 11 176 9 174 10 C174 13 175 14 176 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M176 18 C178 21 176 23 174 22 C174 19 175 18 176 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M203 14 C205 11 203 9 201 10 C201 13 202 14 203 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M203 18 C205 21 203 23 201 22 C201 19 202 18 203 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <!-- end ornaments -->
+      <circle cx="10" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="10" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+      <circle cx="250" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="250" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 10. ITINERARIO ── -->
+  <section id="itinerario" class="sec sec--bg">
+    <p class="eyebrow rv">Programa del Día</p>
+    <h2 class="script-title rv">Itinerario</h2>
+
+    <div class="itin-grid" id="itinGrid">
+      <div class="itin-spine"></div>
+
+      <!-- 4:00 — izquierda -->
+      <div class="itin-item itin-row-l">
+        <div class="itin-time">6:00 pm</div>
+        <div class="itin-evt">Misa de XV Años</div>
+      </div>
+      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div></div>
+
+      <!-- 7:00 — derecha -->
+      <div></div>
+      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div class="itin-item itin-item--r itin-row-r">
+        <div class="itin-time">7:00 pm</div>
+        <div class="itin-evt">Recepción en Quinta El Edén</div>
+      </div>
+
+      <!-- 7:30 — izquierda -->
+      <div class="itin-item itin-row-l">
+        <div class="itin-time">8:00 pm</div>
+        <div class="itin-evt">Banquete</div>
+      </div>
+      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div></div>
+
+      <!-- 7:50 — derecha -->
+      <div></div>
+      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div class="itin-item itin-item--r itin-row-r">
+        <div class="itin-time">9:00 pm</div>
+        <div class="itin-evt">Vals</div>
+      </div>
+
+      <!-- 8:00 — izquierda -->
+      <div class="itin-item itin-row-l">
+        <div class="itin-time">9:00 pm</div>
+        <div class="itin-evt">Baile hasta las 3:00 am</div>
+      </div>
+      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div></div>
+
+    </div>
+  </section>
+
+  <!-- ── ORNAMENTO A ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- lozenge center -->
+      <path d="M180 23 L188 35 L180 47 L172 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".9" opacity=".52"/>
+      <path d="M180 27 L185 35 L180 43 L175 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".4" opacity=".24"/>
+      <circle cx="180" cy="35" r="1.9" fill="#2f6b8a" opacity=".50"/>
+      <!-- stem + jewel -->
+      <line x1="180" y1="47" x2="180" y2="57" stroke="#2f6b8a" stroke-width=".75" opacity=".38" stroke-linecap="round"/>
+      <circle cx="180" cy="59.5" r="2.4" fill="#2f6b8a" opacity=".44"/>
+      <circle cx="180" cy="59.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".6" opacity=".22"/>
+      <circle cx="180" cy="59.5" r="7.2" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".12"/>
+      <!-- left main branch -->
+      <path d="M172 35 C156 32 136 24 112 16 C90 9 69 6 47 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- left secondary branch -->
+      <path d="M172 35 C161 31 146 25 128 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- right main branch -->
+      <path d="M188 35 C204 32 224 24 248 16 C270 9 291 6 313 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- right secondary branch -->
+      <path d="M188 35 C199 31 214 25 232 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- left main leaves -->
+      <path d="M160 29 C157 24 159 20 162 22 C163 26 161 29 160 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M150 26 C147 30 145 34 149 33 C152 32 152 28 150 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M138 21 C135 16 137 12 140 14 C141 18 139 21 138 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M127 17 C124 21 122 25 126 24 C129 23 129 19 127 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M113 12 C110 7 112 3 115 5 C116 9 114 12 113 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M100 9 C97 13 95 17 99 16 C102 15 102 11 100 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M85 7 C83 3 85 0 88 1 C88 4 86 7 85 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M71 6 C69 9 67 13 71 12 C74 11 74 7 71 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- left secondary leaves -->
+      <path d="M152 27 C150 23 152 20 154 21 C155 24 153 27 152 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M139 21 C137 25 136 28 139 27 C142 26 142 22 139 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- right main leaves -->
+      <path d="M200 29 C203 24 201 20 198 22 C197 26 199 29 200 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M210 26 C213 30 215 34 211 33 C208 32 208 28 210 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M222 21 C225 16 223 12 220 14 C219 18 221 21 222 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M233 17 C236 21 238 25 234 24 C231 23 231 19 233 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M247 12 C250 7 248 3 245 5 C244 9 246 12 247 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M260 9 C263 13 265 17 261 16 C258 15 258 11 260 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M275 7 C277 3 275 0 272 1 C272 4 274 7 275 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M289 6 C291 9 293 13 289 12 C286 11 286 7 289 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- right secondary leaves -->
+      <path d="M208 27 C210 23 208 20 206 21 C205 24 207 27 208 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M221 21 C223 25 224 28 221 27 C218 26 218 22 221 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- left tip -->
+      <circle cx="47" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="47" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="35" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="25" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- right tip -->
+      <circle cx="313" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="313" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="325" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="335" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- secondary tips -->
+      <circle cx="128" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="128" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+      <circle cx="232" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="232" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 12. DRESS CODE ── -->
+  <section id="dresscode" class="sec sec--surface">
+    <p class="eyebrow rv">Etiqueta</p>
+    <h2 class="script-title rv">Dress Code</h2>
+    <p class="dc-subtitle rv">Formal</p>
+    <p class="dc-note rv">Queremos que luzcas espectacular en este día tan especial</p>
+
+    <div class="dc-cols">
+      <div class="dc-col rv">
+        <div class="dc-icon">
+          <svg viewBox="0 0 48 82" width="48" height="82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="7.5" r="4.6" stroke="#2f6b8a" stroke-width="1.1"/>
+            <path d="M19.5 5.5 Q22 2.5 24 2.5 Q26 2.5 28.5 5.5" stroke="#2f6b8a" stroke-width=".9" stroke-linecap="round" fill="none" opacity=".65"/>
+            <line x1="24" y1="12.1" x2="24" y2="16.5" stroke="#2f6b8a" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M17.5 16.5 Q20.5 19.5 24 18 Q27.5 19.5 30.5 16.5" stroke="#2f6b8a" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+            <path d="M17.5 16.5 Q11.5 21 9.5 29" stroke="#2f6b8a" stroke-width=".95" stroke-linecap="round" fill="none"/>
+            <path d="M30.5 16.5 Q36.5 21 38.5 29" stroke="#2f6b8a" stroke-width=".95" stroke-linecap="round" fill="none"/>
+            <path d="M17.5 16.5 Q16.5 23 17.5 30.5" stroke="#2f6b8a" stroke-width="1.15" stroke-linecap="round" fill="none"/>
+            <path d="M30.5 16.5 Q31.5 23 30.5 30.5" stroke="#2f6b8a" stroke-width="1.15" stroke-linecap="round" fill="none"/>
+            <path d="M17.5 30.5 Q20.5 32.5 24 32 Q27.5 32.5 30.5 30.5" stroke="#2f6b8a" stroke-width=".9" fill="none" stroke-linecap="round"/>
+            <path d="M17.5 30.5 Q6 50 3 78.5" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M30.5 30.5 Q42 50 45 78.5" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M3 78.5 Q13.5 81.5 24 81.5 Q34.5 81.5 45 78.5" stroke="#2f6b8a" stroke-width="1.05" stroke-linecap="round" fill="none"/>
+            <path d="M20 32 Q14 53 10.5 77" stroke="#2f6b8a" stroke-width=".55" opacity=".38" stroke-linecap="round" fill="none"/>
+            <path d="M28 32 Q34 53 37.5 77" stroke="#2f6b8a" stroke-width=".55" opacity=".38" stroke-linecap="round" fill="none"/>
+            <path d="M24 32 Q24 57 24 79" stroke="#2f6b8a" stroke-width=".4" opacity=".25" stroke-linecap="round" fill="none"/>
+            <path d="M20 28 Q24 30 28 28" stroke="#2f6b8a" stroke-width=".7" opacity=".48" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="dc-col-ttl">Para Ellas</div>
+        <ul class="dc-list">
+          <li>Vestido largo formal</li>
+          <li>Vestido de gala</li>
+          <li>Accesorios elegantes</li>
+          <li>Zapato de tacón o plataforma</li>
+        </ul>
+      </div>
+      <div class="dc-col rv">
+        <div class="dc-icon">
+          <svg viewBox="0 0 48 82" width="48" height="82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="7.5" r="4.6" stroke="#2f6b8a" stroke-width="1.1"/>
+            <line x1="24" y1="12.1" x2="24" y2="18" stroke="#2f6b8a" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M20 18 L22.5 22.5 L24 20.5 L25.5 22.5 L28 18" stroke="#2f6b8a" stroke-width=".9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 18 Q15.5 21.5 14.5 26" stroke="#2f6b8a" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            <path d="M28 18 Q32.5 21.5 33.5 26" stroke="#2f6b8a" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            <path d="M14.5 26 Q10 23 8.5 33" stroke="#2f6b8a" stroke-width="1" stroke-linecap="round" fill="none"/>
+            <path d="M33.5 26 Q38 23 39.5 33" stroke="#2f6b8a" stroke-width="1" stroke-linecap="round" fill="none"/>
+            <path d="M14.5 26 Q13 37 14 48" stroke="#2f6b8a" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M33.5 26 Q35 37 34 48" stroke="#2f6b8a" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M22.5 22.5 L22 33 L24 37 L26 33 L25.5 22.5" stroke="#2f6b8a" stroke-width=".85" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 22.5 Q24 24.5 26 22.5 Q24 21 22 22.5 Z" fill="#2f6b8a" opacity=".55"/>
+            <line x1="24" y1="37" x2="24" y2="48" stroke="#2f6b8a" stroke-width=".75" stroke-linecap="round" opacity=".55"/>
+            <circle cx="24" cy="39.5" r=".85" fill="#2f6b8a" opacity=".55"/>
+            <circle cx="24" cy="43.5" r=".85" fill="#2f6b8a" opacity=".50"/>
+            <path d="M14.5 28.5 Q15.5 26.5 17 27.5" stroke="#2f6b8a" stroke-width=".7" stroke-linecap="round" fill="none" opacity=".50"/>
+            <path d="M14 48 Q24 50 34 48" stroke="#2f6b8a" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            <line x1="15" y1="48" x2="14" y2="79" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="22" y1="48" x2="21" y2="79" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M14 79 Q10.5 81 8.5 80.5" stroke="#2f6b8a" stroke-width="1" stroke-linecap="round" fill="none"/>
+            <path d="M21 79 Q17.5 81.5 14 79 Q10.5 81 8.5 80.5" stroke="#2f6b8a" stroke-width=".75" stroke-linecap="round" fill="none"/>
+            <line x1="26" y1="48" x2="27" y2="79" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="33" y1="48" x2="34" y2="79" stroke="#2f6b8a" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M34 79 Q37.5 81 39.5 80.5" stroke="#2f6b8a" stroke-width="1" stroke-linecap="round" fill="none"/>
+            <path d="M27 79 Q30.5 81.5 34 79 Q37.5 81 39.5 80.5" stroke="#2f6b8a" stroke-width=".75" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="dc-col-ttl">Para Ellos</div>
+        <ul class="dc-list">
+          <li>Traje formal completo</li>
+          <li>Corbata o moño</li>
+          <li>Camisa de vestir</li>
+          <li>Zapato de vestir</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dc-avoid-section rv">
+      <span class="dc-avoid-label">Colores a evitar</span>
+      <div class="dc-avoid-swatches" id="dcAvoidSwatches">
+        <div class="dc-sw">
+          <div class="dc-sw-c" style="background:#93e3fd;border:1.5px solid #c9dfec"></div>
+          <span class="dc-sw-n">Azul cielo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-kids rv">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7 7 0 0 1 13 0"/><line x1="18" y1="3" x2="21" y2="6"/><line x1="21" y1="3" x2="18" y2="6"/></svg>
+      <span>Esta celebración es exclusiva para adultos. Agradecemos tu comprensión.</span>
+    </div>
+  </section>
+
+  <!-- ── 13. GALERÍA RUEDA 3D ── -->
+  <section id="galeria">
+    <p class="eyebrow rv">Nosotros</p>
+    <h2 class="script-title rv">Nuestra Historia</h2>
+    <div class="wheel-scene rv" id="wheel-scene">
+      <div class="wheel-ring" id="wheel-ring">
+        <div class="wheel-card"><img src="foto1.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto2.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto3.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto4.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto5.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto6.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card wheel-card--video">
+          <video src="VideoBoda.mp4" muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+          <div class="vc-play-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="gal-hint rv">Arrastra para girar</p>
+  </section>
+
+  <!-- ── ORNAMENTO B ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- fine rules -->
+      <line x1="10" y1="15.5" x2="113" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="147" y1="15.5" x2="250" y2="15.5" stroke="#2f6b8a" stroke-width=".75" opacity=".40"/>
+      <line x1="10" y1="17.5" x2="113" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <line x1="147" y1="17.5" x2="250" y2="17.5" stroke="#2f6b8a" stroke-width=".3" opacity=".18"/>
+      <!-- 4-petal blossom -->
+      <path d="M130 7 C127 9 127 13 130 14 C133 13 133 9 130 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M130 18 C127 19.5 127 23.5 130 25 C133 23.5 133 19.5 130 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M122 16 C122 13.5 118.5 12.5 117 14.5 C118.5 17 122 17 122 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <path d="M138 16 C138 13.5 141.5 12.5 143 14.5 C141.5 17 138 17 138 16 Z" fill="none" stroke="#2f6b8a" stroke-width=".75" opacity=".52"/>
+      <circle cx="130" cy="16" r="2.1" fill="#2f6b8a" opacity=".48"/>
+      <circle cx="130" cy="16" r="5.8" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".22"/>
+      <!-- diamond accents -->
+      <path d="M97 15.5 L100 18 L97 20.5 L94 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M163 15.5 L166 18 L163 20.5 L160 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".30"/>
+      <path d="M72 15.5 L75 18 L72 20.5 L69 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <path d="M188 15.5 L191 18 L188 20.5 L185 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".45" opacity=".24"/>
+      <!-- leaf pairs (stroke only) -->
+      <path d="M84 14 C82 11 84 9 86 10 C86 13 85 14 84 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M84 18 C82 21 84 23 86 22 C86 19 85 18 84 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M57 14 C55 11 57 9 59 10 C59 13 58 14 57 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M57 18 C55 21 57 23 59 22 C59 19 58 18 57 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M176 14 C178 11 176 9 174 10 C174 13 175 14 176 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M176 18 C178 21 176 23 174 22 C174 19 175 18 176 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".26"/>
+      <path d="M203 14 C205 11 203 9 201 10 C201 13 202 14 203 14 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <path d="M203 18 C205 21 203 23 201 22 C201 19 202 18 203 18 Z" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".22"/>
+      <!-- end ornaments -->
+      <circle cx="10" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="10" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+      <circle cx="250" cy="16.5" r="2.3" fill="#2f6b8a" opacity=".40"/>
+      <circle cx="250" cy="16.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── REGALOS ── -->
+  <section id="regalos">
+    <p class="eyebrow rv">Mesa de Regalos</p>
+    <h2 class="script-title rv">Un Obsequio</h2>
+    <div class="gift-card rv">
+      <p class="gift-msg">
+        Tu presencia en mi celebración es el regalo más valioso que puedo recibir.<br>
+        Sin embargo, si deseas obsequiarme algo, el día del evento habrá lluvia de sobres.
+      </p>
+      <div class="gift-divider"></div>
+      <p class="gift-msg" style="font-style:italic;margin-top:4px">Lluvia de sobres</p>
+      
+    </div>
+  </section>
+
+  <!-- ── ORNAMENTO A ── -->
+  <div class="ornament ornament--b2s rv">
+    <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- lozenge center -->
+      <path d="M180 23 L188 35 L180 47 L172 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".9" opacity=".52"/>
+      <path d="M180 27 L185 35 L180 43 L175 35 Z" fill="none" stroke="#2f6b8a" stroke-width=".4" opacity=".24"/>
+      <circle cx="180" cy="35" r="1.9" fill="#2f6b8a" opacity=".50"/>
+      <!-- stem + jewel -->
+      <line x1="180" y1="47" x2="180" y2="57" stroke="#2f6b8a" stroke-width=".75" opacity=".38" stroke-linecap="round"/>
+      <circle cx="180" cy="59.5" r="2.4" fill="#2f6b8a" opacity=".44"/>
+      <circle cx="180" cy="59.5" r="4.8" fill="none" stroke="#2f6b8a" stroke-width=".6" opacity=".22"/>
+      <circle cx="180" cy="59.5" r="7.2" fill="none" stroke="#2f6b8a" stroke-width=".35" opacity=".12"/>
+      <!-- left main branch -->
+      <path d="M172 35 C156 32 136 24 112 16 C90 9 69 6 47 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- left secondary branch -->
+      <path d="M172 35 C161 31 146 25 128 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- right main branch -->
+      <path d="M188 35 C204 32 224 24 248 16 C270 9 291 6 313 5" stroke="#2f6b8a" stroke-width=".85" opacity=".46" stroke-linecap="round" fill="none"/>
+      <!-- right secondary branch -->
+      <path d="M188 35 C199 31 214 25 232 18" stroke="#2f6b8a" stroke-width=".55" opacity=".32" stroke-linecap="round" fill="none"/>
+      <!-- left main leaves -->
+      <path d="M160 29 C157 24 159 20 162 22 C163 26 161 29 160 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M150 26 C147 30 145 34 149 33 C152 32 152 28 150 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M138 21 C135 16 137 12 140 14 C141 18 139 21 138 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M127 17 C124 21 122 25 126 24 C129 23 129 19 127 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M113 12 C110 7 112 3 115 5 C116 9 114 12 113 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M100 9 C97 13 95 17 99 16 C102 15 102 11 100 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M85 7 C83 3 85 0 88 1 C88 4 86 7 85 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M71 6 C69 9 67 13 71 12 C74 11 74 7 71 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- left secondary leaves -->
+      <path d="M152 27 C150 23 152 20 154 21 C155 24 153 27 152 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M139 21 C137 25 136 28 139 27 C142 26 142 22 139 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- right main leaves -->
+      <path d="M200 29 C203 24 201 20 198 22 C197 26 199 29 200 29 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".44"/>
+      <path d="M210 26 C213 30 215 34 211 33 C208 32 208 28 210 26 Z" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".42"/>
+      <path d="M222 21 C225 16 223 12 220 14 C219 18 221 21 222 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".38"/>
+      <path d="M233 17 C236 21 238 25 234 24 C231 23 231 19 233 17 Z" fill="none" stroke="#2f6b8a" stroke-width=".60" opacity=".36"/>
+      <path d="M247 12 C250 7 248 3 245 5 C244 9 246 12 247 12 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".30"/>
+      <path d="M260 9 C263 13 265 17 261 16 C258 15 258 11 260 9 Z" fill="none" stroke="#2f6b8a" stroke-width=".55" opacity=".26"/>
+      <path d="M275 7 C277 3 275 0 272 1 C272 4 274 7 275 7 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".22"/>
+      <path d="M289 6 C291 9 293 13 289 12 C286 11 286 7 289 6 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".18"/>
+      <!-- right secondary leaves -->
+      <path d="M208 27 C210 23 208 20 206 21 C205 24 207 27 208 27 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".30"/>
+      <path d="M221 21 C223 25 224 28 221 27 C218 26 218 22 221 21 Z" fill="none" stroke="#2f6b8a" stroke-width=".50" opacity=".26"/>
+      <!-- left tip -->
+      <circle cx="47" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="47" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="35" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="25" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- right tip -->
+      <circle cx="313" cy="5" r="3.2" fill="none" stroke="#2f6b8a" stroke-width=".65" opacity=".38"/>
+      <circle cx="313" cy="5" r="1.4" fill="#2f6b8a" opacity=".42"/>
+      <circle cx="325" cy="4" r="1.7" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".24"/>
+      <circle cx="335" cy="3" r="1.0" fill="#2f6b8a" opacity=".15"/>
+      <!-- secondary tips -->
+      <circle cx="128" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="128" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+      <circle cx="232" cy="18" r="2" fill="#2f6b8a" opacity=".36"/>
+      <circle cx="232" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
+    </svg>
+  </div>
+
+  <!-- ── 15. RSVP ── -->
+  <section id="rsvp">
+    <p class="eyebrow rv">Confirma tu Asistencia</p>
+    <h2 class="script-title rv">R.S.V.P.</h2>
+    <p class="rsvp-note rv">Nos encantaría contar contigo</p>
+    <p class="rsvp-deadline rv">Fecha límite: 1 de octubre de 2026</p>
+
+    <div class="rsvp-card rv">
+      <div id="rsvpPasesBadge" class="rsvp-pases-badge" style="text-align:center;width:100%;display:block"></div>
+      <div class="rsvp-attend-row">
+        <button class="rsvp-attend-btn rsvp-attend-btn--yes" id="btnSiAsistire" onclick="selectAttend('yes')">Sí asistiré</button>
+        <button class="rsvp-attend-btn rsvp-attend-btn--no" id="btnNoAsistire" onclick="selectAttend('no')">No asistiré</button>
+      </div>
+      <div id="rsvpNamesContainer"></div>
+      <button class="btn-wa" id="btnConfirmar" onclick="sendRsvp()">
+        Confirmar
+      </button>
+      <p id="rsvpFeedback" style="display:none;text-align:center;margin-top:14px;font-size:14px;font-style:italic"></p>
+    </div>
+  </section>
+
+  <!-- ── 16. FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-names rv">Ximena</div>
+    <div class="footer-date rv">21 &middot; Septiembre &middot; 2026</div>
+    <div class="footer-hr"></div>
+    <a href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener" class="footer-credit">@elysium.invitaciones</a>
+  </footer>
+
+</div><!-- /.wrap -->
+
+<!-- ── VINYL MUSIC BTN ── -->
+<button class="vinyl-btn" id="music-btn" type="button" aria-label="Reproducir música de la invitación">
+  <div class="vinyl-tonearm">
+    <div class="vinyl-tonearm-pivot"></div>
+    <div class="vinyl-tonearm-line"></div>
+    <div class="vinyl-tonearm-head"></div>
+  </div>
+  <div class="vinyl-spin">
+    <div class="vinyl-disc">
+      <div class="vinyl-sheen"></div>
+      <div class="vinyl-label-text">XV<small>2026</small></div>
+      <div class="vinyl-hole"></div>
+    </div>
+  </div>
+  <div class="vinyl-icons">
+    <svg class="vinyl-icon-play" viewBox="0 0 24 24" fill="#E4F2FA" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="vinyl-icon-pause" viewBox="0 0 24 24" fill="#E4F2FA" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </div>
+</button>
+<audio id="bgAudio" loop preload="auto">
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Flash blanco de transición -->
+<div id="env-flash"></div>
+
+<!-- ── SCRIPTS ── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script>
+/* ─────────────── INIT ─────────────── */
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+window.addEventListener('load',        () => window.scrollTo(0, 0));
+window.addEventListener('beforeunload',() => window.scrollTo(0, 0));
+gsap.registerPlugin(ScrollTrigger);
+
+/* ─────────────── ENVELOPE OPENING SEQUENCE ─────────────── */
+function initEnvelope(){
+  const envScreen = document.getElementById('envelope-screen');
+  const envImage  = document.getElementById('envImage');
+  const envVideo  = document.getElementById('envVideo');
+  const envTap    = document.getElementById('envTap');
+  const envFlash  = document.getElementById('env-flash');
+  const mainWrap  = document.querySelector('.wrap');
+
+  let tapped      = false;
+  let flashStarted = false;
+  let finished    = false;
+
+  gsap.fromTo(envImage,
+    { opacity: 0 },
+    { opacity: 1, duration: 1.4, ease: 'power2.out' }
+  );
+  gsap.fromTo(envTap,
+    { opacity: 0, y: 8 },
+    { opacity: 1, y: 0, duration: .9, delay: 1.2, ease: 'power2.out' }
+  );
+
+  function onTap(e){
+    if (tapped) return;
+    tapped = true;
+    e.preventDefault();
+
+    gsap.to(envTap, { opacity: 0, duration: .3 });
+
+    /* Arrancar audio aquí, dentro del gesto del usuario, para que el navegador lo permita */
+    const audio = document.getElementById('bgAudio');
+    const musicBtn = document.getElementById('music-btn');
+    if (audio && audio.paused){
+      audio.play().then(() => { if(musicBtn) musicBtn.classList.add('is-playing'); }).catch(() => {});
+    }
+
+    envVideo.currentTime = 0;
+    envVideo.play().catch(() => {});
+
+    envVideo.addEventListener('timeupdate', checkFlash);
+    envVideo.addEventListener('ended',      onVideoEnd);
+
+    let crossed = false;
+    function waitFrame(){
+      if (crossed) return;
+      if (envVideo.currentTime > 0){
+        crossed = true;
+        gsap.to(envImage, {
+          opacity: 0, duration: .55, ease: 'power2.out',
+          onComplete(){ envImage.style.display = 'none'; }
+        });
+        gsap.to(envVideo, {
+          opacity: 1, duration: .55, ease: 'power2.out'
+        });
+      } else {
+        requestAnimationFrame(waitFrame);
+      }
+    }
+    requestAnimationFrame(waitFrame);
+  }
+
+  function checkFlash(){
+    if (flashStarted) return;
+    if (!isFinite(envVideo.duration)) return;
+    if (envVideo.currentTime >= envVideo.duration - 2){
+      startFlash(1.6);
+    }
+  }
+
+  function onVideoEnd(){
+    if (flashStarted) return;
+    startFlash(.5);
+  }
+
+  function startFlash(dur){
+    flashStarted = true;
+    gsap.to(envFlash, {
+      opacity: 1, duration: dur, ease: 'power2.in',
+      onComplete: finishSequence
+    });
+  }
+
+  function finishSequence(){
+    if (finished) return;
+    finished = true;
+    envScreen.style.display = 'none';
+    mainWrap.style.visibility = 'visible';
+    initAll();
+    gsap.to(envFlash, { opacity: 0, duration: 1.8, ease: 'power1.out',
+      onComplete(){ envFlash.style.display = 'none'; }
+    });
+    gsap.to(mainWrap, { opacity: 1, duration: 1.6, delay: 0.15, ease: 'power1.out' });
+  }
+
+  envScreen.addEventListener('click', onTap, { passive: false });
+  envScreen.addEventListener('touchstart', onTap, { passive: false });
+}
+
+/* ─────────────── DESTELLOS ─────────────── */
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const particlesContainer = document.getElementById('particles');
+const vw = () => window.innerWidth;
+const vh = () => window.innerHeight;
+const SHIMMER_SIZES = ['shimmer--xs','shimmer--xs','shimmer--s','shimmer--s','shimmer--m','shimmer--m'];
+
+function shimmerDiv(){
+  const el = document.createElement('div');
+  const cls = SHIMMER_SIZES[Math.floor(Math.random()*SHIMMER_SIZES.length)];
+  el.className = 'particle ' + cls;
+  el._kind = cls;
+  return el;
+}
+
+function launchShimmer(){
+  const el = shimmerDiv();
+  const startX = Math.random() * vw();
+  const startY = Math.random() * vh();
+  el.style.left = startX + 'px';
+  el.style.top  = startY + 'px';
+  particlesContainer.appendChild(el);
+
+  const isBig   = el._kind === 'shimmer--m';
+  const peakOp  = el._kind === 'shimmer--xs' ? .7 : (el._kind === 'shimmer--s' ? .9 : 1);
+  const life    = (isBig ? 8 : 11) + Math.random() * 6;
+
+  const drift = gsap.timeline({
+    onComplete: () => { el.remove(); setTimeout(launchShimmer, Math.random() * 500 + 60); }
+  });
+  drift.fromTo(el, {opacity:0, scale:.3}, {opacity:peakOp, scale:1, duration:1.6, ease:'sine.out'});
+
+  const steps = 5 + Math.floor(Math.random()*3);
+  for(let i=0; i<steps; i++){
+    drift.to(el, {
+      x: '+=' + ((Math.random()-.5) * 60),
+      y: '+=' + ((Math.random()-.5) * 50 - 4),
+      duration: life / steps,
+      ease: 'sine.inOut'
+    }, '<' + (i === 0 ? 0 : '+=0'));
+  }
+
+  gsap.to(el, {
+    opacity: peakOp * .3,
+    duration: 1.4 + Math.random() * 1.2,
+    ease: 'sine.inOut',
+    yoyo: true,
+    repeat: Math.floor(life / 2),
+  });
+
+  drift.to(el, {opacity:0, scale:.4, duration:1.4, ease:'sine.in'}, '-=1.2');
+}
+
+function launchSparkle(){
+  const el = document.createElement('div');
+  el.className = 'particle sparkle';
+  const size = 10 + Math.random() * 18;
+  el.style.width  = size + 'px';
+  el.style.height = size + 'px';
+  el.style.left   = Math.random() * vw() + 'px';
+  el.style.top    = Math.random() * vh() + 'px';
+  particlesContainer.appendChild(el);
+
+  const tl = gsap.timeline({
+    onComplete: () => { el.remove(); setTimeout(launchSparkle, 2500 + Math.random() * 5000); }
+  });
+  tl.fromTo(el,
+    {opacity:0, scale:0, rotation:0},
+    {opacity:.7 + Math.random()*.3, scale:1, rotation:30 + Math.random()*60, duration:.5, ease:'back.out(2)'}
+  );
+  tl.to(el, {scale:1.3, opacity:.5, rotation:'+=20', duration:.6, ease:'sine.inOut'}, '+=.15');
+  tl.to(el, {opacity:0, scale:.2, rotation:'+=30', duration:.5, ease:'sine.in'});
+}
+
+(function startParticles(){
+  if(prefersReduced) return;
+  const TOTAL = 90;
+  for(let i=0; i<TOTAL; i++){
+    setTimeout(launchShimmer, i * 100 + Math.random()*200);
+  }
+  for(let j=0; j<6; j++){
+    setTimeout(launchSparkle, j * 1200 + Math.random()*2000);
+  }
+})();
+
+/* ─────────────── COUNTDOWN ─────────────── */
+(function initCountdown(){
+  const TARGET = new Date('2026-09-21T18:00:00-06:00').getTime();
+  const pad = (n, w = 2) => String(n).padStart(w, '0');
+
+  function tick(){
+    const diff = TARGET - Date.now();
+    if (diff <= 0){
+      document.getElementById('cdDias').textContent  = '000';
+      document.getElementById('cdHoras').textContent = '00';
+      document.getElementById('cdMins').textContent  = '00';
+      document.getElementById('cdSecs').textContent  = '00';
+      return;
+    }
+    document.getElementById('cdDias').textContent  = pad(Math.floor(diff / 86400000), 3);
+    document.getElementById('cdHoras').textContent = pad(Math.floor(diff % 86400000 / 3600000));
+    document.getElementById('cdMins').textContent  = pad(Math.floor(diff % 3600000  / 60000));
+    document.getElementById('cdSecs').textContent  = pad(Math.floor(diff % 60000    / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ─────────────── RSVP PASES ─────────────── */
+const RSVP_PARAMS = new URLSearchParams(window.location.search);
+const RSVP_PARA   = RSVP_PARAMS.get('para');
+const RSVP_RAW    = parseInt(RSVP_PARAMS.get('pases') || '1', 10);
+const RSVP_PASES  = (isNaN(RSVP_RAW) || RSVP_RAW < 1 || RSVP_RAW > 20) ? 1 : RSVP_RAW;
+const RSVP_URL    = 'https://xv-ximena-hernandez.vercel.app';
+let   RSVP_CHOICE = '';   /* 'yes' | 'no' | '' */
+
+/* Fecha límite: 1 oct 2026 23:59:59 — desde el 2 oct 00:00 el form se congela */
+const RSVP_DEADLINE = new Date(2026, 9, 1, 23, 59, 59, 999);
+const RSVP_FROZEN   = Date.now() > RSVP_DEADLINE.getTime();
+
+(function initRsvp(){
+  const badge = document.getElementById('rsvpPasesBadge');
+  badge.textContent = RSVP_PASES === 1
+    ? '1 pase · Solo tú'
+    : RSVP_PASES + ' pases · Tú + ' + (RSVP_PASES - 1) + ' acompañante' + (RSVP_PASES - 1 > 1 ? 's' : '');
+
+  const container = document.getElementById('rsvpNamesContainer');
+  for (let i = 0; i < RSVP_PASES; i++){
+    const label = i === 0 ? 'Tu nombre' : 'Acompañante ' + i;
+    const ph    = i === 0 ? 'Tu nombre completo' : 'Nombre del acompañante ' + i;
+    const div   = document.createElement('div');
+    div.className = 'rsvp-field';
+    div.innerHTML =
+      '<label for="rsvpName' + i + '">' + label + '</label>' +
+      '<input type="text" id="rsvpName' + i + '" class="rsvp-name-input" placeholder="' + ph + '" autocomplete="name">';
+    container.appendChild(div);
+  }
+
+  /* Línea personalizada bajo la fecha (solo si hay ?para=) */
+  if(RSVP_PARA){
+    const inv = document.getElementById('invPersonalizada');
+    if(inv){
+      const safe = RSVP_PARA.replace(/</g,'&lt;');
+      const pl   = RSVP_PASES === 1 ? '1 pase' : RSVP_PASES + ' pases';
+      inv.innerHTML = 'Esta invitación es para<br><strong style="font-style:normal;color:var(--accent);font-weight:600">' + safe + '</strong><br>con ' + pl;
+      inv.style.display = 'block';
+    }
+  }
+
+  /* Pre-llenar con la confirmación previa si existe */
+  if(RSVP_PARA){
+    const apiUrl = 'https://panel-invitados.vercel.app/api/confirmar'
+                 + '?nombre='   + encodeURIComponent(RSVP_PARA)
+                 + '&url_boda=' + encodeURIComponent(RSVP_URL);
+    fetch(apiUrl)
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d && d.ok && d.invitado){
+          const inv = d.invitado;
+          if(inv.estado === 'confirmado'){
+            selectAttend('yes');
+            const inputs = document.querySelectorAll('.rsvp-name-input');
+            const nombres = Array.isArray(inv.nombres_confirmados) ? inv.nombres_confirmados : [];
+            nombres.forEach(function(n, idx){
+              if(inputs[idx]) inputs[idx].value = n;
+            });
+          } else if(inv.estado === 'declino'){
+            selectAttend('no');
+          }
+        }
+        applyDeadlineFreeze();
+      })
+      .catch(function(){ applyDeadlineFreeze(); });
+  } else {
+    applyDeadlineFreeze();
+  }
+})();
+
+/* ─────────────── FECHA LÍMITE — CONGELAR FORM ─────────────── */
+function applyDeadlineFreeze(){
+  if(!RSVP_FROZEN) return;
+
+  const btnC   = document.getElementById('btnConfirmar');
+  const btnYes = document.getElementById('btnSiAsistire');
+  const btnNo  = document.getElementById('btnNoAsistire');
+  const card   = document.querySelector('.rsvp-card');
+  const cont   = document.getElementById('rsvpNamesContainer');
+
+  if(btnYes){ btnYes.disabled = true; btnYes.style.cursor='not-allowed'; btnYes.style.opacity='.55'; }
+  if(btnNo) { btnNo.disabled  = true; btnNo.style.cursor='not-allowed';  btnNo.style.opacity='.55'; }
+  document.querySelectorAll('.rsvp-name-input').forEach(function(i){
+    i.disabled = true;
+    i.style.background = '#f1ede7';
+    i.style.cursor = 'not-allowed';
+  });
+  if(btnC){
+    btnC.disabled = true;
+    btnC.textContent = 'Plazo cerrado';
+    btnC.style.cursor = 'not-allowed';
+    btnC.style.opacity = '.55';
+  }
+
+  /* Banner explicativo al inicio de la tarjeta */
+  if(card && !document.getElementById('rsvpDeadlineBanner')){
+    const banner = document.createElement('div');
+    banner.id = 'rsvpDeadlineBanner';
+    banner.style.cssText = 'margin-bottom:18px;padding:14px 16px;border-radius:10px;background:rgba(107,100,80,.10);border:1px solid rgba(107,100,80,.25);color:#5a4f3a;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;line-height:1.5;text-align:center';
+    banner.innerHTML = '✦ El plazo para confirmar cerró el <strong style="font-style:normal">1 de octubre de 2026</strong>.<br>Si necesitas ajustar tu respuesta, por favor contacta directamente con la familia.';
+    card.insertBefore(banner, card.firstChild);
+  }
+}
+
+/* ─────────────── TOGGLE SÍ / NO ASISTIRÉ ─────────────── */
+function selectAttend(choice){
+  RSVP_CHOICE = choice;
+  const btnYes = document.getElementById('btnSiAsistire');
+  const btnNo  = document.getElementById('btnNoAsistire');
+  if(btnYes) btnYes.classList.toggle('active', choice === 'yes');
+  if(btnNo)  btnNo.classList.toggle('active',  choice === 'no');
+
+  /* Ocultar inputs si dijo que NO asistirá */
+  const cont = document.getElementById('rsvpNamesContainer');
+  if(cont) cont.style.display = choice === 'no' ? 'none' : '';
+
+  /* Limpiar feedback previo */
+  const fb = document.getElementById('rsvpFeedback');
+  if(fb) fb.style.display = 'none';
+}
+
+/* ─────────────── RSVP → PANEL ─────────────── */
+function setFeedback(msg, color){
+  const fb = document.getElementById('rsvpFeedback');
+  if(!fb) return;
+  fb.style.display = 'block';
+  fb.style.color   = color;
+  fb.textContent   = msg;
+}
+
+function postRsvp(estado, nombresArr){
+  const btnC = document.getElementById('btnConfirmar');
+  btnC.disabled = true;
+  btnC.textContent = 'Enviando…';
+  setFeedback('', 'inherit');
+
+  fetch('https://panel-invitados.vercel.app/api/confirmar', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      nombre:              RSVP_PARA || 'Invitado',
+      estado:              estado,
+      pases_confirmados:   estado === 'confirmado' ? nombresArr.length : 0,
+      nombres_confirmados: estado === 'confirmado' ? nombresArr : [],
+      url_boda:            RSVP_URL
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    btnC.disabled = false;
+    if(d && d.ok){
+      /* Feedback temporal pero SIN congelar: usuario puede reconfirmar */
+      btnC.textContent = estado === 'confirmado' ? '¡Confirmado! ✦' : 'Respuesta enviada ✦';
+      setFeedback(
+        estado === 'confirmado'
+          ? '¡Gracias por confirmar! Si cambias de opinión puedes actualizar tu respuesta cuando quieras.'
+          : 'Gracias por avisarnos. Si cambias de opinión puedes actualizar tu respuesta cuando quieras.',
+        '#6b9b64'
+      );
+      setTimeout(function(){ btnC.textContent = 'Actualizar respuesta'; }, 2400);
+    } else {
+      btnC.textContent = 'Confirmar';
+      setFeedback('Hubo un problema al enviar. Intenta de nuevo.', '#b91c1c');
+    }
+  })
+  .catch(function(){
+    btnC.disabled = false;
+    btnC.textContent = 'Confirmar';
+    setFeedback('Sin conexión. Verifica tu internet e intenta de nuevo.', '#b91c1c');
+  });
+}
+
+function sendRsvp(){
+  if(RSVP_FROZEN){
+    setFeedback('El plazo para confirmar ya cerró.', '#b91c1c');
+    return;
+  }
+  if(!RSVP_CHOICE){
+    setFeedback('Selecciona si asistirás o no.', '#b91c1c');
+    return;
+  }
+  if(RSVP_CHOICE === 'no'){
+    postRsvp('declino', []);
+    return;
+  }
+  /* RSVP_CHOICE === 'yes' */
+  const inputs = document.querySelectorAll('.rsvp-name-input');
+  const names  = Array.from(inputs).map(i => i.value.trim()).filter(n => n);
+  if(names.length === 0){
+    setFeedback('Escribe al menos un nombre para confirmar.', '#b91c1c');
+    if(inputs[0]) inputs[0].focus();
+    return;
+  }
+  postRsvp('confirmado', names);
+}
+
+/* ─────────────── VINYL MUSIC BTN ─────────────── */
+(function initVinyl(){
+  const musicEl  = document.getElementById('bgAudio');
+  const musicBtn = document.getElementById('music-btn');
+  if(musicEl) musicEl.volume = 0.18;
+
+  if(musicEl){
+    musicEl.addEventListener('play',  ()=> musicBtn && musicBtn.classList.add('is-playing'));
+    musicEl.addEventListener('pause', ()=> musicBtn && musicBtn.classList.remove('is-playing'));
+    musicEl.addEventListener('ended', ()=>{ if(musicEl) musicEl.play().catch(()=>{}); });
+  }
+
+  function showMusicBtn(){ if(musicBtn) musicBtn.classList.add('is-ready'); }
+
+  function tryPlay(){
+    showMusicBtn();
+    if(!musicEl) return;
+    const p = musicEl.play();
+    if(p && typeof p.catch === 'function') p.catch(()=>{});
+  }
+
+  window._startAudio = tryPlay;
+
+  if(musicBtn){
+    musicBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      if(!musicEl) return;
+      if(musicEl.paused){
+        musicEl.play().catch(()=>{});
+      } else {
+        musicEl.pause();
+      }
+    });
+  }
+})();
+
+/* ─────────────── ANIMACIONES ─────────────── */
+function initAll(){
+  /* Reveal general */
+  document.querySelectorAll('.rv').forEach(el => {
+    gsap.fromTo(el,
+      { y: 36, opacity: 0 },
+      { y: 0,  opacity: 1, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* Itinerario animado */
+  const itinTrig = { trigger: '#itinGrid', start: 'top 82%', toggleActions: 'play none none none' };
+
+  gsap.fromTo('.itin-spine',
+    { scaleY: 0 },
+    { scaleY: 1, duration: 1.6, ease: 'power2.inOut', scrollTrigger: itinTrig }
+  );
+
+  document.querySelectorAll('.itin-row-l, .itin-row-r').forEach((el, i) => {
+    const fromRight = el.classList.contains('itin-row-r');
+    gsap.fromTo(el,
+      { x: fromRight ? 50 : -50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
+        delay: 0.2 + i * 0.32, scrollTrigger: itinTrig }
+    );
+  });
+
+  document.querySelectorAll('.itin-dot').forEach((dot, i) => {
+    gsap.fromTo(dot,
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(3.5)',
+        delay: 0.35 + i * 0.32, scrollTrigger: itinTrig }
+    );
+    gsap.fromTo(dot,
+      { boxShadow: '0 0 0 0 rgba(138,139,101,.65)' },
+      { boxShadow: '0 0 0 10px rgba(138,139,101,0)', duration: 0.7, ease: 'power2.out',
+        delay: 0.7 + i * 0.32, scrollTrigger: itinTrig }
+    );
+  });
+
+  /* Dress code avoid swatches */
+  document.querySelectorAll('#dcAvoidSwatches .dc-sw-c').forEach((el, i) => {
+    gsap.fromTo(el,
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2)',
+        delay: i * 0.08,
+        scrollTrigger: { trigger: '#dcAvoidSwatches', start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* Carrusel de fotos */
+  /* Galería — rueda 3D con inercia */
+  (function initWheel(){
+    var cards  = document.querySelectorAll('.wheel-card');
+    var ring   = document.getElementById('wheel-ring');
+    if (!ring || cards.length === 0) return;
+
+    var n       = cards.length;
+    var radius  = 210;
+    var rot     = 0;
+    var vel     = 0;
+    var isDrag  = false;
+    var startX  = 0;
+    var startRot = 0;
+    var lastX   = 0;
+    var rafId   = null;
+
+    cards.forEach(function(card, i){
+      card.style.transform = 'rotateY(' + (360 / n * i) + 'deg) translateZ(' + radius + 'px)';
+    });
+
+    function setRot(r){
+      rot = r;
+      gsap.set(ring, { rotateY: rot });
+    }
+
+    function inertia(){
+      if (Math.abs(vel) < 0.05){ vel = 0; return; }
+      vel *= 0.94;
+      setRot(rot + vel);
+      rafId = requestAnimationFrame(inertia);
+    }
+
+    ring.addEventListener('mousedown', function(e){
+      cancelAnimationFrame(rafId);
+      isDrag = true; vel = 0;
+      startX = e.clientX; startRot = rot; lastX = e.clientX;
+      ring.classList.add('dragging');
+    });
+    window.addEventListener('mousemove', function(e){
+      if (!isDrag) return;
+      var dx = e.clientX - startX;
+      vel = (e.clientX - lastX) * 0.5;
+      lastX = e.clientX;
+      setRot(startRot + dx * 0.45);
+    });
+    window.addEventListener('mouseup', function(){
+      if (!isDrag) return;
+      isDrag = false;
+      ring.classList.remove('dragging');
+      rafId = requestAnimationFrame(inertia);
+    });
+
+    ring.addEventListener('touchstart', function(e){
+      cancelAnimationFrame(rafId);
+      isDrag = true; vel = 0;
+      startX = e.touches[0].clientX; startRot = rot; lastX = startX;
+    }, { passive: true });
+    window.addEventListener('touchmove', function(e){
+      if (!isDrag) return;
+      var dx = e.touches[0].clientX - startX;
+      vel = (e.touches[0].clientX - lastX) * 0.5;
+      lastX = e.touches[0].clientX;
+      setRot(startRot + dx * 0.45);
+    }, { passive: true });
+    window.addEventListener('touchend', function(){
+      if (!isDrag) return;
+      isDrag = false;
+      rafId = requestAnimationFrame(inertia);
+    });
+  })();
+
+  /* Ocultar scroll hint */
+  const scrollHint = document.getElementById('scrollHint');
+  if (scrollHint){
+    const hideHint = () => { scrollHint.classList.add('hidden'); window.removeEventListener('scroll', hideHint); };
+    window.addEventListener('scroll', hideHint, { passive: true });
+  }
+
+  ScrollTrigger.refresh();
+
+  if (typeof window._startAudio === 'function') window._startAudio();
+}
+
+/* ─────────────── VIDEO CARD ─────────────── */
+(function initVideoCard(){
+  const card = document.querySelector('.wheel-card--video');
+  if(!card) return;
+  const vid = card.querySelector('video');
+  if(!vid) return;
+
+  /* Show first frame as preview as soon as metadata is ready */
+  function seekPreview(){
+    try{ vid.currentTime = 0.1; }catch(e){}
+  }
+  if(vid.readyState >= 1){ seekPreview(); }
+  else{ vid.addEventListener('loadedmetadata', seekPreview, {once:true}); }
+
+  /* Toggle play/pause on tap — video continues playing while user scrolls */
+  card.addEventListener('click', function(){
+    if(vid.paused){
+      vid.play().catch(()=>{});
+      card.classList.add('playing');
+    } else {
+      vid.pause();
+      card.classList.remove('playing');
+    }
+  });
+
+  /* Re-show play button when video ends (loop is on, so this won't fire normally) */
+  vid.addEventListener('pause', function(){ card.classList.remove('playing'); });
+  vid.addEventListener('play',  function(){ card.classList.add('playing'); });
+})();
+
+/* ─────────────── ARRANCAR ─────────────── */
+initEnvelope();
+</script>
+</body>
+</html>
