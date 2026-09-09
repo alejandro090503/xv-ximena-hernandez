@@ -23,7 +23,7 @@
 <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── VARIABLES ── */
 :root{
@@ -33,6 +33,9 @@
   --text:#1E1508;
   --surface:#E4F2FA;
   --card:#FFFFFF;
+  --gold:#C9A04E;
+  --gold-light:#E8D5A3;
+  --gold-deep:#9A7830;
 }
 
 /* ── RESET ── */
@@ -1069,6 +1072,59 @@ body{
   color:#215a78;margin-top:12px;opacity:1;
 }
 .scroll-hint{z-index:3}
+
+/* ════════ DORADO CON BARRIDO (receta de xv-mia) ════════ */
+@keyframes goldSweep{0%{background-position:200% center}100%{background-position:-100% center}}
+@keyframes shimmerGold{0%,100%{background-position:200% center}50%{background-position:-200% center}}
+.script-title,.hero-bride,.footer-names,.quote-sig,.ld-mono,.fecha-main,.gold-text{
+  background-image:linear-gradient(100deg,
+    #6B4F1C 0%,#7A5C22 10%,#8A6A28 20%,#A8822F 27%,#C9A04E 32%,#A8822F 37%,
+    #9A7830 46%,#6B4F1C 58%,#8A6A28 70%,#B98F3C 80%,#7A5C22 90%,#6B4F1C 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;color:transparent;
+  animation:goldSweep 6s linear infinite;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.60));
+}
+/* Great Vibes se corta en la caja: aire lateral */
+.script-title,.hero-bride,.footer-names,.quote-sig,.ld-mono{
+  padding-left:.14em;padding-right:.14em;margin-left:-.14em;margin-right:-.14em;
+}
+.ld-mono{-webkit-text-fill-color:transparent}
+@media (prefers-reduced-motion:reduce){
+  .script-title,.hero-bride,.footer-names,.quote-sig,.ld-mono,.fecha-main,.gold-text{
+    animation:none!important;background-position:60% center!important;
+  }
+}
+.eyebrow,.loc-cal-eyebrow,.rsvp-deadline,.hero-eyebrow,.fecha-label,.cd-lbl,.dc-col-ttl,.fam-role,.dc-avoid-label{
+  font-family:'Cinzel',serif;font-weight:600;color:var(--gold-deep);
+}
+.eyebrow,.loc-cal-eyebrow{font-style:normal;font-size:13px;letter-spacing:5px}
+.fecha-label{font-size:15px;letter-spacing:6px;text-transform:uppercase}
+.cd-num{color:#1d5674}
+.itin-time,.loc-hours{color:var(--gold-deep);font-weight:700}
+.fecha-rule,.footer-hr,.gift-divider,.loc-cal-divider,.fecha-vline{
+  background:linear-gradient(to right,rgba(201,160,78,0),rgba(201,160,78,.75),rgba(201,160,78,0));
+}
+.itin-dot{background:var(--gold)!important;box-shadow:0 0 0 4px rgba(201,160,78,.18)}
+.itin-spine{background:linear-gradient(to bottom,rgba(201,160,78,0),rgba(201,160,78,.5),rgba(201,160,78,0))}
+
+/* ════════ HERO: acuarela azul con vetas doradas ════════ */
+.hero-bg{
+  background:url('fondo-hero.jpg') center/cover no-repeat,
+             linear-gradient(180deg,#EAF7FF 0%,#CBF0FF 38%,#AFE2F7 68%,#DCF1FC 100%);
+}
+.hero-flora{opacity:.16}
+.hero-glow{
+  background:radial-gradient(72% 46% at 50% 46%,rgba(255,255,255,.82) 0%,rgba(255,255,255,.34) 46%,rgba(255,255,255,0) 76%);
+}
+.hero-eyebrow{color:var(--gold-deep);font-size:15px;letter-spacing:6px}
+.hero-crown{width:104px}
+.hero-rule{
+  background:linear-gradient(to right,rgba(201,160,78,0),rgba(201,160,78,.85),rgba(201,160,78,0));
+}
+.hero-date{font-family:'Cinzel',serif;font-weight:600;font-size:16px;letter-spacing:4px;color:#215a78}
+.vinyl-label-text{color:var(--gold-light)}
 </style>
 </head>
 <body>
