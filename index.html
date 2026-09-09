@@ -991,6 +991,84 @@ body{
   background:radial-gradient(circle,#a0a17a,#2f6b8a);border-radius:50%;
   box-shadow:0 1px 3px rgba(0,0,0,.3);
 }
+
+/* ════════ FONDO CONTINUO AZUL CIELO (sin costuras entre secciones) ════════ */
+.wrap{
+  background:linear-gradient(180deg,
+    #F6FCFF 0%,   #E3F3FD 7%,   #CFE9FA 15%,  #E8F6FE 24%,
+    #D6EDFB 33%,  #F1FAFE 42%,  #CFE7F8 52%,  #EAF6FE 61%,
+    #D9EFFC 70%,  #F2FAFE 79%,  #CFE9FA 88%,  #F6FCFF 100%);
+}
+.sec,.sec--bg,.sec--surface,
+#fecha,#countdown,#quote,#familia,#ubicacion,#itinerario,
+#dresscode,#regalos,#rsvp,#footer,#hero{
+  background:transparent;
+}
+/* halo suave en las secciones sin asset — puro degradado de azul cielo */
+#fecha::before,#ubicacion::before,#footer::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(115% 78% at 50% 50%,rgba(255,255,255,.72) 0%,rgba(203,240,255,.42) 46%,rgba(203,240,255,0) 100%);
+}
+#fecha,#ubicacion,#footer{position:relative}
+#fecha>*,#ubicacion>*,#footer>*{position:relative;z-index:1}
+/* capa decorativa con bordes difuminados (une una seccion con la siguiente) */
+.sec-flora{
+  position:absolute;inset:-2px;
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),
+             linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%);
+  mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%);
+  -webkit-mask-composite:destination-in;
+}
+#quote,#familia,#itinerario,#dresscode,#regalos,#rsvp,#countdown{position:relative;isolation:isolate}
+#quote>*:not(.sec-flora),#familia>*:not(.sec-flora),#itinerario>*:not(.sec-flora),
+#dresscode>*:not(.sec-flora),#regalos>*:not(.sec-flora),#rsvp>*:not(.sec-flora),
+#countdown>*:not(.sec-flora){position:relative;z-index:1}
+.ornament{position:relative;z-index:1;background:transparent}
+
+/* ════════ HERO REDISEÑADO ════════ */
+#hero{align-items:center;padding-bottom:0;overflow:hidden}
+.hero-bg{
+  background:linear-gradient(180deg,#EAF7FF 0%,#CBF0FF 38%,#AFE2F7 68%,#DCF1FC 100%);
+}
+.hero-flora{
+  position:absolute;inset:0;
+  background:url('mariposas3.webp') center/cover no-repeat;
+  opacity:.30;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 58%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 58%,transparent 100%);
+}
+.hero-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(78% 52% at 50% 44%,rgba(255,255,255,.88) 0%,rgba(255,255,255,.42) 44%,rgba(255,255,255,0) 74%);
+}
+.hero-veil{
+  background:linear-gradient(to bottom,rgba(246,252,255,.55) 0%,rgba(246,252,255,0) 26%,rgba(246,252,255,.35) 72%,#F6FCFF 100%);
+}
+.hero-crown{
+  display:block;width:118px;max-width:44vw;height:auto;margin:0 auto 10px;
+  opacity:.95;filter:drop-shadow(0 6px 18px rgba(47,107,138,.28));
+}
+.hero-eyebrow{
+  display:block;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:17px;letter-spacing:7px;text-transform:uppercase;
+  color:#215a78;margin-bottom:6px;
+}
+.hero-bride{color:#1d5674;text-shadow:0 2px 22px rgba(255,255,255,.85)}
+.hero-rule{
+  display:block;width:180px;max-width:62vw;height:1px;margin:14px auto 0;
+  background:linear-gradient(to right,rgba(47,107,138,0),rgba(47,107,138,.6),rgba(47,107,138,0));
+}
+.hero-date{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;letter-spacing:5px;
+  color:#215a78;margin-top:12px;opacity:1;
+}
+.scroll-hint{z-index:3}
 </style>
 </head>
 <body>
@@ -1019,11 +1097,15 @@ body{
   <!-- ── 1. HERO ── -->
   <section id="hero">
     <div class="hero-bg"></div>
+    <div class="hero-flora"></div>
+    <div class="hero-glow"></div>
     <div class="hero-veil"></div>
     <div class="hero-content">
+      <img class="hero-crown rv" src="corona.png" alt="" aria-hidden="true">
+      <span class="hero-eyebrow rv">Mis XV Años</span>
       <span class="hero-bride rv">Ximena</span>
-      <span class="hero-amp rv">&middot;</span>
-      <span class="hero-groom rv">XV Años</span>
+      <span class="hero-rule rv"></span>
+      <span class="hero-date rv">21 &middot; Septiembre &middot; 2026</span>
     </div>
     <div class="scroll-hint" id="scrollHint">
       <span class="scroll-hint-txt">Desliza</span>
@@ -1112,6 +1194,7 @@ body{
 
   <!-- ── 4. CUENTA REGRESIVA ── -->
   <section id="countdown" class="sec sec--surface">
+    <div class="sec-flora" style="background-image:url('copo-esquina.png');opacity:.14"></div>
     <p class="eyebrow rv">Faltan</p>
     <h2 class="script-title rv">Cuenta Regresiva</h2>
     <div class="cd-grid">
@@ -1161,6 +1244,7 @@ body{
 
   <!-- ── 6. FRASE ── -->
   <section id="quote" class="sec sec--bg">
+    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.17"></div>
     <p class="quote-txt rv">
       &ldquo;Hoy doy gracias a Dios por estos quince años de vida, por mi familia y por cada persona que ha caminado a mi lado. Con el corazón lleno de ilusión, pongo en sus manos esta nueva etapa.&rdquo;
     </p>
@@ -1231,6 +1315,7 @@ body{
 
   <!-- ── FAMILIA ── -->
   <section id="familia" class="sec">
+    <div class="sec-flora" style="background-image:url('mariposas2.webp');opacity:.15"></div>
     <p class="eyebrow rv">Con la bendición de</p>
     <h2 class="script-title rv">Mi Familia</h2>
     <div class="fam-grid">
@@ -1376,6 +1461,7 @@ body{
 
   <!-- ── 10. ITINERARIO ── -->
   <section id="itinerario" class="sec sec--bg">
+    <div class="sec-flora" style="background-image:url('mariposas3.webp');opacity:.14"></div>
     <p class="eyebrow rv">Programa del Día</p>
     <h2 class="script-title rv">Itinerario</h2>
 
@@ -1489,6 +1575,7 @@ body{
 
   <!-- ── 12. DRESS CODE ── -->
   <section id="dresscode" class="sec sec--surface">
+    <div class="sec-flora" style="background-image:url('mariposas4.webp');opacity:.13"></div>
     <p class="eyebrow rv">Etiqueta</p>
     <h2 class="script-title rv">Dress Code</h2>
     <p class="dc-subtitle rv">Formal</p>
@@ -1641,6 +1728,7 @@ body{
 
   <!-- ── REGALOS ── -->
   <section id="regalos">
+    <div class="sec-flora" style="background-image:url('mariposas5.webp');opacity:.15"></div>
     <p class="eyebrow rv">Mesa de Regalos</p>
     <h2 class="script-title rv">Un Obsequio</h2>
     <div class="gift-card rv">
@@ -1718,6 +1806,7 @@ body{
 
   <!-- ── 15. RSVP ── -->
   <section id="rsvp">
+    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.13"></div>
     <p class="eyebrow rv">Confirma tu Asistencia</p>
     <h2 class="script-title rv">R.S.V.P.</h2>
     <p class="rsvp-note rv">Nos encantaría contar contigo</p>
