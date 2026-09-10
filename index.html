@@ -1247,6 +1247,30 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
 .rsvp-btn>*{position:relative;z-index:1}
 #rsvp-pases-note,#rsvp-feedback{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:#3c6f8c;text-align:center;margin:14px auto 0;max-width:420px;display:none}
 .rsvp-deadline{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+
+/* ── ÁLBUM COMPARTIDO (xv-diana-victoria) ── */
+#album{position:relative;isolation:isolate;text-align:center}
+#album>*:not(.sec-flora){position:relative;z-index:1}
+#album .sec-flora{opacity:.24!important}
+.album-txt{
+  max-width:330px;margin:0 auto 26px;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;line-height:1.7;
+  color:#245d7c;
+}
+.album-qr{display:flex;flex-direction:column;align-items:center;gap:10px}
+.album-qr img{
+  border-radius:14px;padding:10px;background:#fff;
+  border:1px solid rgba(201,160,78,.35);
+  box-shadow:0 10px 34px rgba(29,86,116,.16);
+}
+.album-qr-lbl{
+  font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold-deep);margin-top:6px;
+}
+.album-qr-note{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;font-weight:600;
+  color:#3c6f8c;
+}
 </style>
 </head>
 <body>
@@ -1956,6 +1980,21 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
       <circle cx="232" cy="18" r="3.5" fill="none" stroke="#2f6b8a" stroke-width=".5" opacity=".20"/>
     </svg>
   </div>
+
+  <!-- ── ÁLBUM COMPARTIDO ── -->
+  <section id="album" class="sec sec--surface">
+    <div class="sec-flora" style="background-image:url('mariposas2.webp');opacity:.24"></div>
+    <p class="eyebrow rv">Comparte el Momento</p>
+    <h2 class="script-title rv">Álbum Compartido</h2>
+    <p class="album-txt rv">Después del evento, sube tus fotos y videos al álbum compartido — será mi recuerdo colectivo de este día tan especial.</p>
+    <div class="album-qr rv">
+      <img id="albumQrImg"
+           src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fxv-ximena-hernandez.vercel.app&size=180x180&color=1D5674&bgcolor=ffffff&margin=6&qzone=1&ecc=M"
+           alt="Código QR del álbum compartido" width="180" height="180">
+      <span class="album-qr-lbl">Escanea para abrir el álbum</span>
+      <span class="album-qr-note">El enlace estará disponible muy pronto</span>
+    </div>
+  </section>
 
   <!-- ── 15. RSVP ── -->
   <section id="rsvp">
