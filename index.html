@@ -1271,6 +1271,28 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;font-weight:600;
   color:#3c6f8c;
 }
+
+/* ── BOTON IR AL ALBUM ── */
+.btn-album{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:16px;padding:15px clamp(24px,7vw,38px);
+  width:min(300px,82vw);min-height:54px;
+  border:1.5px solid rgba(201,160,78,.55);border-radius:50px;
+  background:linear-gradient(135deg,#c6e2ff 0%,#eaf6ff 55%,#deeeff 100%);
+  font-family:'Cinzel',serif;font-size:13px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:#1d5674;text-decoration:none;
+  box-shadow:0 8px 22px rgba(29,86,116,.16),0 2px 8px rgba(201,160,78,.20);
+  animation:albumFloat 3.8s ease-in-out infinite;
+  transition:transform .25s ease,box-shadow .25s ease,background .3s ease;
+}
+.btn-album svg{width:17px;height:17px;fill:var(--gold-deep);flex-shrink:0}
+.btn-album:hover{background:linear-gradient(135deg,#b9dcff 0%,#e4f3ff 55%,#d2e8ff 100%);
+  box-shadow:0 14px 30px rgba(201,160,78,.28)}
+.btn-album:active{transform:translateY(1px) scale(.99)}
+.btn-album:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+@keyframes albumFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media (prefers-reduced-motion:reduce){.btn-album{animation:none}}
+@media (max-width:360px){.btn-album{font-size:12px;letter-spacing:.16em;padding:14px 20px}}
 </style>
 </head>
 <body>
@@ -1993,6 +2015,10 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
            alt="Código QR del álbum compartido" width="180" height="180">
       <span class="album-qr-lbl">Escanea para abrir el álbum</span>
       <span class="album-qr-note">El enlace estará disponible muy pronto</span>
+      <a id="albumBtn" class="btn-album" href="https://xv-ximena-hernandez.vercel.app" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 12h14l-4.5-6-3.5 4.5-2.5-3z"/><circle cx="8.5" cy="9" r="1.6"/></svg>
+        Ir al álbum
+      </a>
     </div>
   </section>
 
