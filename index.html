@@ -1841,12 +1841,15 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
     <h2 class="script-title rv">Mi Historia</h2>
     <div class="wheel-scene rv" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="g1.jpg" alt="Ximena · XV Años" loading="lazy"></div>
-        <div class="wheel-card"><img src="g2.jpg" alt="Ximena · XV Años" loading="lazy"></div>
-        <div class="wheel-card"><img src="g3.jpg" alt="Ximena · XV Años" loading="lazy"></div>
-        <div class="wheel-card"><img src="g4.jpg" alt="Ximena · XV Años" loading="lazy"></div>
-        <div class="wheel-card"><img src="g5.jpg" alt="Ximena · XV Años" loading="lazy"></div>
-        <div class="wheel-card"><img src="g6.jpg" alt="Ximena · XV Años" loading="lazy"></div>
+        <div class="wheel-card"><img src="foto1.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto2.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto3.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto4.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto5.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto6.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto7.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto8.jpg" alt="Ximena · XV Años" decoding="async"></div>
+        <div class="wheel-card"><img src="foto9.jpg" alt="Ximena · XV Años" decoding="async"></div>
         
       </div>
     </div>
@@ -2628,7 +2631,8 @@ function initAll(){
     if (!ring || cards.length === 0) return;
 
     var n       = cards.length;
-    var radius  = 210;
+    var cw = cards[0].offsetWidth || 150;
+    var radius  = Math.max(210, Math.round(cw / (2 * Math.tan(Math.PI / n))) + 16);
     var rot     = 0;
     var vel     = 0;
     var isDrag  = false;
