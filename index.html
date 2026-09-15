@@ -2650,50 +2650,58 @@ function initAll(){
       gsap.set(ring, { rotateY: rot });
     }
 
-    function inertia(){
-      if (Math.abs(vel) < 0.05){ vel = 0; return; }
-      vel *= 0.94;
-      setRot(rot + vel);
-      rafId = requestAnimationFrame(inertia);
+    /* Giro automatico lento + arrastre + reanudacion al soltar */
+    var AUTO_SPEED = 0.07;      /* grados por frame (~4.2 deg/s, vuelta en ~85 s) */
+    var RESUME_MS  = 1600;      /* espera tras soltar antes de retomar el giro */
+    var autoV = AUTO_SPEED;     /* velocidad automatica actual (se acelera suave) */
+    var releasedAt = 0;
+    var lastT = 0;
+
+    function loop(t){
+      var dt = lastT ? Math.min((t - lastT) / 16.667, 3) : 1;
+      lastT = t;
+      if (!isDrag){
+        if (Math.abs(vel) > 0.05){
+          vel *= Math.pow(0.94, dt);
+          setRot(rot + vel * dt);
+          autoV = 0;
+        } else {
+          vel = 0;
+          if (performance.now() - releasedAt > RESUME_MS){
+            autoV += (AUTO_SPEED - autoV) * 0.02 * dt;
+            setRot(rot - autoV * dt);
+          }
+        }
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+    rafId = requestAnimationFrame(loop);
+
+    function dragStart(x){
+      isDrag = true; vel = 0; autoV = 0;
+      startX = x; startRot = rot; lastX = x;
+    }
+    function dragMove(x){
+      if (!isDrag) return;
+      vel = (x - lastX) * 0.5;
+      lastX = x;
+      setRot(startRot + (x - startX) * 0.45);
+    }
+    function dragEnd(){
+      if (!isDrag) return;
+      isDrag = false;
+      releasedAt = performance.now();
+      ring.classList.remove('dragging');
     }
 
-    ring.addEventListener('mousedown', function(e){
-      cancelAnimationFrame(rafId);
-      isDrag = true; vel = 0;
-      startX = e.clientX; startRot = rot; lastX = e.clientX;
-      ring.classList.add('dragging');
-    });
-    window.addEventListener('mousemove', function(e){
-      if (!isDrag) return;
-      var dx = e.clientX - startX;
-      vel = (e.clientX - lastX) * 0.5;
-      lastX = e.clientX;
-      setRot(startRot + dx * 0.45);
-    });
-    window.addEventListener('mouseup', function(){
-      if (!isDrag) return;
-      isDrag = false;
-      ring.classList.remove('dragging');
-      rafId = requestAnimationFrame(inertia);
-    });
+    ring.addEventListener('mousedown', function(e){ dragStart(e.clientX); ring.classList.add('dragging'); });
+    window.addEventListener('mousemove', function(e){ dragMove(e.clientX); });
+    window.addEventListener('mouseup', dragEnd);
 
-    ring.addEventListener('touchstart', function(e){
-      cancelAnimationFrame(rafId);
-      isDrag = true; vel = 0;
-      startX = e.touches[0].clientX; startRot = rot; lastX = startX;
-    }, { passive: true });
-    window.addEventListener('touchmove', function(e){
-      if (!isDrag) return;
-      var dx = e.touches[0].clientX - startX;
-      vel = (e.touches[0].clientX - lastX) * 0.5;
-      lastX = e.touches[0].clientX;
-      setRot(startRot + dx * 0.45);
-    }, { passive: true });
-    window.addEventListener('touchend', function(){
-      if (!isDrag) return;
-      isDrag = false;
-      rafId = requestAnimationFrame(inertia);
-    });
+    ring.addEventListener('touchstart', function(e){ dragStart(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', function(e){ dragMove(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', dragEnd);
+    window.addEventListener('touchcancel', dragEnd);
   })();
 
   /* Ocultar scroll hint */
