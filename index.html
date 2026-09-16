@@ -1239,6 +1239,7 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
 .rsvp-input{border-color:rgba(154,120,48,.55)}
 .rsvp-input::placeholder{color:#5f7f92;opacity:1;font-style:italic;font-weight:500}
 .rsvp-btn:disabled{opacity:.55;cursor:not-allowed}
+.rsvp-input.rsvp-input-falta{border-color:#B85042;box-shadow:0 0 0 3px rgba(184,80,66,.16)}
 /* RSVP · contador de pases a ocupar */
 .rsvp-aviso-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;line-height:1.6;color:#245d7c;text-align:center;max-width:420px;margin:0 auto 20px;display:none}
 .rsvp-contador-nota{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17.5px;line-height:1.55;color:#245d7c;text-align:center;max-width:420px;margin:0 auto 14px}
@@ -2447,7 +2448,9 @@ function launchSparkle(){
   function msg(txt, err){
     if(!feedbackEl) return;
     feedbackEl.textContent = txt || '';
-    feedbackEl.style.display = txt ? '' : 'none';
+    // 'block' y no '': el CSS base lo tiene en display:none
+    feedbackEl.style.display = txt ? 'block' : 'none';
+    if (txt && err) feedbackEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     feedbackEl.style.color = err ? '#B85042' : 'var(--gold-deep)';
   }
 
@@ -2467,6 +2470,7 @@ function launchSparkle(){
       inp.className = 'rsvp-input'; inp.type = 'text'; inp.maxLength = 60; inp.autocomplete = 'off';
       inp.placeholder = pasesAUsar === 1 ? 'Tu nombre completo' : 'Nombre completo del invitado ' + (i+1);
       inp.value = savedNames[i] || '';
+      inp.addEventListener('input', function(){ this.classList.remove('rsvp-input-falta'); });
       inp.disabled = frozen || bloqueado;
       fieldsEl.appendChild(inp);
     }
@@ -2613,9 +2617,17 @@ function launchSparkle(){
         var first = fieldsEl.querySelector('input'); if(first) first.focus();
         return;
       }
-      if(nombres.length < pasesAUsar){
+      if (nombres.length < pasesAUsar){
         var faltan = pasesAUsar - nombres.length;
-        msg('Faltan ' + faltan + ' nombre' + (faltan === 1 ? '' : 's') + '. Si van a ser menos, baja el contador de pases.', true);
+        /* Se marcan los campos vacíos para que se note cuál falta */
+        var primero = null;
+        Array.prototype.forEach.call(fieldsEl.querySelectorAll('input'), function(inp){
+          var vacio = !inp.value.trim();
+          inp.classList.toggle('rsvp-input-falta', vacio);
+          if (vacio && !primero) primero = inp;
+        });
+        msg('Elegiste ' + pasesAUsar + ' pases pero escribiste ' + nombres.length + ' nombre' + (nombres.length === 1 ? '' : 's') + '. Escribe ' + (faltan === 1 ? 'el nombre que falta' : 'los ' + faltan + ' nombres que faltan') + ' o baja el contador a los pases que vas a utilizar.', true);
+        if (primero) primero.focus({ preventScroll: true });
         return;
       }
     }
